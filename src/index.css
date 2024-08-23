@@ -1,0 +1,30 @@
+.searchContainer {
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+  /* 
+  .searchContainer input {
+    font-size: 1.563rem;
+    border-radius: 2.5rem;
+    flex-grow: 1;
+    color: #979797;
+    padding: 0.625rem 1.563rem;
+    margin-right: 1.25rem;
+    border-color: #a1a1a1;
+    border-style: solid;
+  }
+
+  .searchBtn {
+    border-radius: 50%;
+    width: 3.75rem;
+    height: 3.75rem;
+    color: #979797;
+    border-color: #a1a1a1;
+    border-style: solid;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
