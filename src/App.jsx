@@ -14,8 +14,8 @@ const AppContainer = styled.div`
 `;
 
 const CustomContainer = styled.div`
-width:80%;
-margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 `;
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
     <>
       {/* <ChakraProvider> */}
       <AppContainer>
-          <Header />
+        <Header />
         <CustomContainer>
           <Home />
         </CustomContainer>
