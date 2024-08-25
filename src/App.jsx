@@ -1,10 +1,11 @@
-// import { background, Box, ChakraProvider, Container } from '@chakra-ui/react'
 import "./App.css";
 import styled from "styled-components";
 import { colors } from "./theme/colors";
-// import { Container } from "@chakra-ui/react";
-import Header from "./components/Header";
-import Home from "./components/home";
+import Header from "./components/authenticated/Header";
+import Home from "./components/authenticated/Home";
+import { ChakraProvider } from "@chakra-ui/react";
+import { BrowserRouter } from "react-router-dom";
+import AuthenticatedRoutes from "./routes/AuthenticatedRoutes";
 
 const AppContainer = styled.div`
   // backgroundColor:${colors.bg.primary};
@@ -13,22 +14,19 @@ const AppContainer = styled.div`
   // width:100px;
 `;
 
-const CustomContainer = styled.div`
-  width: 80%;
-  margin: 0 auto;
-`;
 
 function App() {
   return (
     <>
-      {/* <ChakraProvider> */}
+      <ChakraProvider>
+        <BrowserRouter>
       <AppContainer>
-        <Header />
-        <CustomContainer>
-          <Home />
-        </CustomContainer>
+        {/* <CustomContainer> */}
+        <AuthenticatedRoutes/>
+        {/* </CustomContainer> */}
       </AppContainer>
-      {/* </ChakraProvider> */}
+      </BrowserRouter>
+      </ChakraProvider>
     </>
   );
 }
