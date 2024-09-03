@@ -1,8 +1,6 @@
 import "./App.css";
 import styled from "styled-components";
 import { colors } from "./theme/colors";
-import Header from "./components/authenticated/Header";
-import Home from "./components/authenticated/Home";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 import AuthenticatedRoutes from "./routes/AuthenticatedRoutes";

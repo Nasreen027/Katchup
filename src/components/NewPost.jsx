@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Icon, Textarea } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { colors } from "../../theme/colors";
-import { customIcons } from "../../theme/icons";
+import { customIcons } from "../theme/icons";
+import { colors } from "../theme/colors";
 
 function NewPost() {
   const [title, setTitle] = useState("");
@@ -59,7 +59,8 @@ function NewPost() {
         <Button
           borderRadius={50}
           backgroundColor={colors.bg.accent}
-          color={colors.text.primary}
+          color={colors.text.secondary}
+          _hover={{ bg: "rgba(102, 0, 51, 0.75)" }}
         >
           Publish
         </Button>

@@ -5,4 +5,5 @@ export const AuthenticatedRoutesNames = {
 export const UnAuthenticatedRoutesNames={
     NotFound:"/notFound",
     Register:"/register",
+    Login:"/login",
 }

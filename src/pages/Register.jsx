@@ -40,7 +40,7 @@ const Register = () => {
           w="full"
           bg={colors.bg.accent}
           color={colors.text.secondary}
-          _hover={{ bg: colors.bg.secondary }}
+          _hover={{ bg: "rgba(102, 0, 51, 0.75)" }}
           size="lg"
         >
           Register
@@ -51,7 +51,7 @@ const Register = () => {
         <Text textAlign="center" color={colors.text.primary}>
           Already have an account?{' '}
           <Text fontWeight={'bold'} as="span" color={colors.bg.accent} cursor="pointer">
-            Sign In
+            Login
           </Text>
         </Text>
       </Box>

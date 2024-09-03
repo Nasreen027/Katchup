@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { AuthenticatedRoutesNames } from "../utilities/util.const";
-import Home from "../components/authenticated/Home";
-import NewPost from "../components/authenticated/NewPost";
 import MainLayout from "../Layout/MainLayout";
+import Home from "../components/Home";
+import NewPost from "../components/NewPost";
 
 const AuthenticatedRoutes = () => {
   return (

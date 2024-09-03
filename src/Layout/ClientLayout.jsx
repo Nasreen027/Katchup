@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../components/authenticated/Header";
 import { Outlet } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 import ClientHeader from "../components/unauthenticated/clientHeader";

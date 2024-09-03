@@ -1,6 +1,6 @@
 import { Box, Container, Heading } from "@chakra-ui/react";
 import React from "react";
-import SinglePost from "../authenticated/SinglePost";
+import SinglePost from "./SinglePost";
 // import { Outlet } from "react-router-dom";
 
 function Home() {

@@ -1,6 +1,6 @@
 import { IconButton, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
-import { colors } from "../../theme/colors";
-import { customIcons } from "../../theme/icons";
+import { customIcons } from "../theme/icons";
+import { colors } from "../theme/colors";
 
 function SearchBar() {
   return (

@@ -12,9 +12,9 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import ProfilePic from "../../assets/myProfile.png";
-import { colors } from "../../theme/colors";
-import { customIcons } from "../../theme/icons";
+import ProfilePic from '../assets/myProfile.png';
+import { colors } from "../theme/colors";
+import { customIcons } from "../theme/icons";
 
 function SinglePost() {
   const [like, setLike] = useState(false);

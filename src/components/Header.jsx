@@ -10,12 +10,12 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import styled from "styled-components";
-import ProfilePic from "../../assets/myProfile.png";
+import ProfilePic from '../assets/myProfile.png';
 import SearchBar from "./SearchBar";
 import { NavLink, useNavigate } from "react-router-dom";
-import { AuthenticatedRoutesNames } from "../../utilities/util.const";
-import { colors } from "../../theme/colors";
-import { customIcons } from "../../theme/icons";
+import { customIcons } from "../theme/icons";
+import { AuthenticatedRoutesNames } from "../utilities/util.const";
+import { colors } from "../theme/colors";
 
 const CustomLogo = styled.div`
   font-size: 34px;
