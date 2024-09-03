@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "../components/authenticated/Header";
 import { Outlet } from "react-router-dom";
-import styled from "styled-components";
 import { Box } from "@chakra-ui/react";
+import ClientHeader from "../components/unauthenticated/clientHeader";
 
-const MainLayout = () => {
+const ClientLayout = () => {
   // const CustomContainer = styled.div`
   //   width: 80%;
   //   margin: 0 auto;
@@ -14,12 +14,12 @@ const MainLayout = () => {
 
   return (
     <>
-      <Header />
-      <Box px={20} py={10}>
+      <ClientHeader />
+      <Box>
         <Outlet />
       </Box>
     </>
   );
 };
 
-export default MainLayout;
+export default ClientLayout;

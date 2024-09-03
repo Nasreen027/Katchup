@@ -13,10 +13,8 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import ProfilePic from "../../assets/myProfile.png";
-import { MdFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
-import { BiBookmark, BiSolidBookmark } from "react-icons/bi";
-import { FaCommentDots } from "react-icons/fa";
-import { SlUserFollow, SlUserFollowing } from "react-icons/sl";
+import { colors } from "../../theme/colors";
+import { customIcons } from "../../theme/icons";
 
 function SinglePost() {
   const [like, setLike] = useState(false);
@@ -55,7 +53,7 @@ function SinglePost() {
                 >
                   <Box
                      overflow={'hidden'}
-                     backgroundColor={"#e1d6c5"}
+                     backgroundColor={colors.bg.primary}
                      justifyContent={"center"}
                      alignItems={"center"}
                      borderRadius={50}
@@ -85,9 +83,9 @@ function SinglePost() {
                     onClick={() => setLike(!like)}
                     icon={
                       like === true ? (
-                        <MdOutlineFavorite style={{ color: "red" }} />
+                        <customIcons.MdOutlineFavorite style={{ color: "red" }} />
                       ) : (
-                        <MdFavoriteBorder />
+                        <customIcons.MdFavoriteBorder />
                       )
                     }
                   />
@@ -98,7 +96,7 @@ function SinglePost() {
                     background={"transparent"}
                     fontSize={25}
                     border={"none"}
-                    icon={<FaCommentDots />}
+                    icon={<customIcons.FaCommentDots />}
                   />
                   <span>76</span>
                 </Link>
@@ -112,7 +110,7 @@ function SinglePost() {
                     border={"none"}
                     onClick={() => setBookMark(!bookmark)}
                     icon={
-                      bookmark === true ? <BiSolidBookmark /> : <BiBookmark />
+                      bookmark === true ? <customIcons.BiSolidBookmark /> : <customIcons.BiBookmark />
                     }
                   />
                 </Link>
@@ -123,7 +121,7 @@ function SinglePost() {
                     border={"none"}
                     onClick={() => setFollow(!follow)}
                     icon={
-                      follow === true ? <SlUserFollowing style={{color:'green'}} /> : <SlUserFollow />
+                      follow === true ? <customIcons.SlUserFollowing style={{color:'green'}} /> : <customIcons.SlUserFollow />
                     }
                   />
                 </Link>

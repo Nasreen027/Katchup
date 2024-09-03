@@ -6,6 +6,7 @@ import Home from "./components/authenticated/Home";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 import AuthenticatedRoutes from "./routes/AuthenticatedRoutes";
+import UnAuthenticatedRoutes from "./routes/UnAuthenticatedRoutes";
 
 const AppContainer = styled.div`
   // backgroundColor:${colors.bg.primary};
@@ -23,6 +24,7 @@ function App() {
       <AppContainer>
         {/* <CustomContainer> */}
         <AuthenticatedRoutes/>
+        <UnAuthenticatedRoutes/>
         {/* </CustomContainer> */}
       </AppContainer>
       </BrowserRouter>

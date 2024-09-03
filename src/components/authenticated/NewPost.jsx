@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Icon, Textarea } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { IoIosAddCircleOutline } from "react-icons/io";
 import { colors } from "../../theme/colors";
+import { customIcons } from "../../theme/icons";
 
 function NewPost() {
   const [title, setTitle] = useState("");
@@ -10,16 +10,16 @@ function NewPost() {
     <>
       <Flex mb={5} alignItems={"center"} flexWrap={"wrap"}>
         <Icon
-          color={"#e1d6c5"}
+          color={colors.bg.primary}
           mr={1}
           fontSize={45}
-          as={IoIosAddCircleOutline}
+          as={customIcons.newPostCreate}
         />
         <Box width={"70%"}>
           <Textarea
             onChange={(e) => setTitle(e.target.value)}
             fontFamily={"serif"}
-            color={"#e1d6c5"}
+            color={colors.bg.primary}
             // defaultValue={"Title"}
             placeholder="Title"
             fontSize={54}
@@ -34,16 +34,16 @@ function NewPost() {
       </Flex>
       <Flex mb={5} alignItems={"center"} flexWrap={"wrap"}>
         <Icon
-          color={"#e1d6c5"}
+          color={colors.bg.primary}
           mr={1}
           fontSize={45}
-          as={IoIosAddCircleOutline}
+          as={customIcons.newPostCreate}
         />
         <Box width={"70%"}>
           <Textarea
             onChange={(e) => setStory(e.target.value)}
             fontFamily={"serif"}
-            color={"#e1d6c5"}
+            color={colors.bg.primary}
             // defaultValue={"Tell your story..."}
             placeholder="Tell your story..."
             fontSize={30}
@@ -59,7 +59,7 @@ function NewPost() {
         <Button
           borderRadius={50}
           backgroundColor={colors.bg.accent}
-          color={colors.bg.primary}
+          color={colors.text.primary}
         >
           Publish
         </Button>

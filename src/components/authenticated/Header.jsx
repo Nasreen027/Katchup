@@ -10,13 +10,12 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import styled from "styled-components";
-import { TfiWrite } from "react-icons/tfi";
-import { FaRegBell } from "react-icons/fa";
 import ProfilePic from "../../assets/myProfile.png";
 import SearchBar from "./SearchBar";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthenticatedRoutesNames } from "../../utilities/util.const";
-import { HiMiniPencilSquare } from "react-icons/hi2";
+import { colors } from "../../theme/colors";
+import { customIcons } from "../../theme/icons";
 
 const CustomLogo = styled.div`
   font-size: 34px;
@@ -44,13 +43,13 @@ function Header() {
         <Flex justifyContent={"space-between"} alignItems={"center"} w={190}>
           <NavLink to={AuthenticatedRoutesNames.NewPost}>
             <Flex>
-              <Icon fontSize={25} mr={1} as={HiMiniPencilSquare} />
+              <Icon fontSize={25} mr={1} as={customIcons.write} />
               <Text>Write</Text>
             </Flex>
           </NavLink>
           <Center height="40px">
             <Divider
-              borderColor={"#e1d6c5"}
+              borderColor={colors.bg.primary}
               borderWidth={2}
               orientation="vertical"
             />
@@ -60,12 +59,12 @@ function Header() {
               background={"transparent"}
               fontSize={25}
               border={"none"}
-              icon={<FaRegBell />}
+              icon={<customIcons.bell/>}
             />
           </NavLink>
           <Center height="40px">
             <Divider
-              borderColor={"#e1d6c5"}
+              borderColor={colors.bg.primary}
               borderWidth={2}
               orientation="vertical"
             />
@@ -73,7 +72,7 @@ function Header() {
           <NavLink>
             <Flex
               overflow={"hidden"}
-              backgroundColor={"#e1d6c5"}
+              backgroundColor={colors.bg.primary}
               justifyContent={"center"}
               alignItems={"center"}
               borderRadius={50}
