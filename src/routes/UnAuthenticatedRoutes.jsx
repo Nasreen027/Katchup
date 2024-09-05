@@ -15,12 +15,13 @@ const UnAuthenticatedRoutes = () => {
             path={UnAuthenticatedRoutesNames.NotFound}
             element={<NotFound />}
           />
+        </Route>
           <Route
             path={UnAuthenticatedRoutesNames.Register}
             element={<Register />}
           />
           <Route path={UnAuthenticatedRoutesNames.Login} element={<Login />} />
-        </Route>
+
       </Routes>
     </>
   );

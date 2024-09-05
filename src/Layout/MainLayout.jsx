@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const MainLayout = () => {
   // const CustomContainer = styled.div`
@@ -17,6 +18,7 @@ const MainLayout = () => {
       <Box px={20} py={10}>
         <Outlet />
       </Box>
+      <Footer/>
     </>
   );
 };

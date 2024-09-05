@@ -13,6 +13,8 @@ import {
 } from '@chakra-ui/react';
 import { colors } from '../theme/colors';
 import { customIcons } from '../theme/icons';
+import { Link } from 'react-router-dom';
+import { UnAuthenticatedRoutesNames } from '../utilities/util.const';
    
 
 const Register = () => {
@@ -43,16 +45,16 @@ const Register = () => {
           _hover={{ bg: "rgba(102, 0, 51, 0.75)" }}
           size="lg"
         >
-          Register
+          Sign up
         </Button>
 
         <Divider my={8} borderColor={colors.text.secondary} />
 
         <Text textAlign="center" color={colors.text.primary}>
           Already have an account?{' '}
-          <Text fontWeight={'bold'} as="span" color={colors.bg.accent} cursor="pointer">
+          <Link to={UnAuthenticatedRoutesNames.Login} fontWeight={'bold'} as="span" color={colors.bg.accent} cursor="pointer">
             Login
-          </Text>
+          </Link>
         </Text>
       </Box>
     </Flex>

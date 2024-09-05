@@ -13,19 +13,24 @@ const AppContainer = styled.div`
   // width:100px;
 `;
 
+export const CustomHeading = styled.h1`
+  font-family: cursive;
+  font-size:30px;
+  font-weight:bold;
+`;
 
 function App() {
   return (
     <>
       <ChakraProvider>
         <BrowserRouter>
-      <AppContainer>
-        {/* <CustomContainer> */}
-        <AuthenticatedRoutes/>
-        <UnAuthenticatedRoutes/>
-        {/* </CustomContainer> */}
-      </AppContainer>
-      </BrowserRouter>
+          <AppContainer>
+            {/* <CustomContainer> */}
+            <AuthenticatedRoutes />
+            <UnAuthenticatedRoutes />
+            {/* </CustomContainer> */}
+          </AppContainer>
+        </BrowserRouter>
       </ChakraProvider>
     </>
   );

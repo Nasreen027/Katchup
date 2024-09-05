@@ -12,7 +12,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import ProfilePic from '../assets/myProfile.png';
+import ProfilePic from "../assets/myProfile.png";
 import { colors } from "../theme/colors";
 import { customIcons } from "../theme/icons";
 
@@ -47,22 +47,20 @@ function SinglePost() {
                 </Text>
               </Box>
               <Box flexGrow={1}></Box>
-              <Link>
-                <Flex
-                 alignItems={"center"}
-                >
+              <Link _hover={{ textDecoration: "none" }}>
+                <Flex alignItems={"center"}>
                   <Box
-                     overflow={'hidden'}
-                     backgroundColor={colors.bg.primary}
-                     justifyContent={"center"}
-                     alignItems={"center"}
-                     borderRadius={50}
-                     w={45}
-                     mr={1}
+                    overflow={"hidden"}
+                    backgroundColor={colors.bg.primary}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    borderRadius={50}
+                    w={45}
+                    mr={1}
                   >
                     <Image w={30} src={ProfilePic} />
                   </Box>
-                  <Box>Iman</Box>
+                  <Text>Iman</Text>
                 </Flex>
               </Link>
             </Flex>
@@ -75,15 +73,20 @@ function SinglePost() {
               justifyContent={"space-between"}
             >
               <Box>
-                <Link mr={4}>
+                <Link _hover={{ textDecoration: "none" }} mr={4}>
                   <IconButton
+                    _hover={{
+                      bg: "transparent",
+                    }}
                     background={"transparent"}
                     fontSize={25}
                     border={"none"}
                     onClick={() => setLike(!like)}
                     icon={
                       like === true ? (
-                        <customIcons.MdOutlineFavorite style={{ color: "red" }} />
+                        <customIcons.MdOutlineFavorite
+                          style={{ color: "red" }}
+                        />
                       ) : (
                         <customIcons.MdFavoriteBorder />
                       )
@@ -91,8 +94,11 @@ function SinglePost() {
                   />
                   <span>23</span>
                 </Link>
-                <Link>
+                <Link _hover={{ textDecoration: "none" }}>
                   <IconButton
+                    _hover={{
+                      bg: "transparent",
+                    }}
                     background={"transparent"}
                     fontSize={25}
                     border={"none"}
@@ -103,25 +109,41 @@ function SinglePost() {
               </Box>
               <Box flex={1}></Box>
               <Box>
-                <Link>
+                <Link _hover={{ textDecoration: "none" }}>
                   <IconButton
+                    _hover={{
+                      bg: "transparent",
+                    }}
                     background={"transparent"}
                     fontSize={25}
                     border={"none"}
                     onClick={() => setBookMark(!bookmark)}
                     icon={
-                      bookmark === true ? <customIcons.BiSolidBookmark /> : <customIcons.BiBookmark />
+                      bookmark === true ? (
+                        <customIcons.BiSolidBookmark />
+                      ) : (
+                        <customIcons.BiBookmark />
+                      )
                     }
                   />
                 </Link>
-                <Link>
+                <Link _hover={{ textDecoration: "none" }}>
                   <IconButton
+                    _hover={{
+                      bg: "transparent",
+                    }}
                     background={"transparent"}
                     fontSize={25}
                     border={"none"}
                     onClick={() => setFollow(!follow)}
                     icon={
-                      follow === true ? <customIcons.SlUserFollowing style={{color:'green'}} /> : <customIcons.SlUserFollow />
+                      follow === true ? (
+                        <customIcons.SlUserFollowing
+                          style={{ color: "green" }}
+                        />
+                      ) : (
+                        <customIcons.SlUserFollow />
+                      )
                     }
                   />
                 </Link>
