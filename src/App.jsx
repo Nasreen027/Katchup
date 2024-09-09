@@ -5,6 +5,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 import AuthenticatedRoutes from "./routes/AuthenticatedRoutes";
 import UnAuthenticatedRoutes from "./routes/UnAuthenticatedRoutes";
+import { FirebaseProvider } from "./context/Firebase";
 
 const AppContainer = styled.div`
   // backgroundColor:${colors.bg.primary};
@@ -24,12 +25,14 @@ function App() {
     <>
       <ChakraProvider>
         <BrowserRouter>
+        <FirebaseProvider>
           <AppContainer>
             {/* <CustomContainer> */}
             <AuthenticatedRoutes />
             <UnAuthenticatedRoutes />
             {/* </CustomContainer> */}
           </AppContainer>
+          </FirebaseProvider>
         </BrowserRouter>
       </ChakraProvider>
     </>

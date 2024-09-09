@@ -18,7 +18,7 @@ import React from "react";
 import styled from "styled-components";
 import ProfilePic from "../assets/myProfile.png";
 import SearchBar from "./SearchBar";
-import { NavLink, } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { customIcons } from "../theme/icons";
 import { AuthenticatedRoutesNames } from "../utilities/util.const";
 import { colors } from "../theme/colors";
@@ -34,7 +34,7 @@ const CustomLogo = styled.div`
 `;
 
 function Header() {
-  const {isOpen, onOpen, onClose} = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
       <Flex
@@ -64,8 +64,7 @@ function Header() {
           <Box position="relative">
             <Menu>
               <MenuButton
-              _hover={{background:"transparent"}}
-              
+                _hover={{ background: "transparent" }}
                 as={IconButton}
                 background="transparent"
                 fontSize={25}
@@ -74,7 +73,7 @@ function Header() {
                   <Box position="relative">
                     <customIcons.bell />
                     <Badge
-                    h={4}
+                      h={4}
                       colorScheme="red"
                       borderRadius="50%"
                       position="absolute"
@@ -113,18 +112,18 @@ function Header() {
             />
           </Center>
           <Box
-          cursor={'pointer'}
-                    overflow={"hidden"}
-                    backgroundColor={colors.bg.primary}
-                    justifyContent={"center"}
-                    alignItems={"center"}
-                    borderRadius={50}
-                    w={45}
-                    mr={1}
-                  >
-                    <Image w={30} src={ProfilePic} onClick={onOpen} />
-                    <CustomDrawer isOpen={isOpen} onClose={onClose}/>
-                  </Box>
+            cursor={"pointer"}
+            overflow={"hidden"}
+            backgroundColor={colors.bg.primary}
+            justifyContent={"center"}
+            alignItems={"center"}
+            borderRadius={50}
+            w={45}
+            mr={1}
+          >
+            <Image w={30} src={ProfilePic} onClick={onOpen} />
+            <CustomDrawer isOpen={isOpen} onClose={onClose} />
+          </Box>
         </Flex>
       </Flex>
     </>
