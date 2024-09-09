@@ -29,9 +29,11 @@ const Form = () => {
     const getPath = location.pathname;
     if (getPath === UnAuthenticatedRoutesNames.Register) {
       setIsSignup(true);
-      console.log(isSignup, "isSignup");
+      // console.log(isSignup, "isSignup");
+    }else{
+      setIsSignup(false);
     }
-  }, [location.pathname, isSignup]); // Dependency should be location.pathname
+  }, [location.pathname]); // Dependency should be location.pathname
 
   const validateEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

@@ -5,6 +5,7 @@ import NotFound from "../pages/notFound";
 import Register from "../pages/Register";
 import ClientLayout from "../Layout/ClientLayout";
 import Login from "../pages/Login";
+import About from "../pages/About";
 
 const UnAuthenticatedRoutes = () => {
   return (
@@ -15,13 +16,13 @@ const UnAuthenticatedRoutes = () => {
             path={UnAuthenticatedRoutesNames.NotFound}
             element={<NotFound />}
           />
+          <Route path={UnAuthenticatedRoutesNames.About} element={<About />} />
         </Route>
-          <Route
-            path={UnAuthenticatedRoutesNames.Register}
-            element={<Register />}
-          />
-          <Route path={UnAuthenticatedRoutesNames.Login} element={<Login />} />
-
+        <Route
+          path={UnAuthenticatedRoutesNames.Register}
+          element={<Register />}
+        />
+        <Route path={UnAuthenticatedRoutesNames.Login} element={<Login />} />
       </Routes>
     </>
   );

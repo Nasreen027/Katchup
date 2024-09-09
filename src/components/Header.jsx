@@ -1,5 +1,4 @@
 import {
-  background,
   Badge,
   Box,
   Center,
@@ -8,23 +7,22 @@ import {
   Icon,
   IconButton,
   Image,
-  Link,
   Menu,
   MenuButton,
-  MenuDivider,
   MenuItem,
   MenuList,
   Text,
+  useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
 import styled from "styled-components";
 import ProfilePic from "../assets/myProfile.png";
 import SearchBar from "./SearchBar";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, } from "react-router-dom";
 import { customIcons } from "../theme/icons";
 import { AuthenticatedRoutesNames } from "../utilities/util.const";
 import { colors } from "../theme/colors";
-import Dropdown from "./Dropdown";
+import CustomDrawer from "./CustomDrawer";
 
 const CustomLogo = styled.div`
   font-size: 34px;
@@ -36,7 +34,7 @@ const CustomLogo = styled.div`
 `;
 
 function Header() {
-  const navigate = useNavigate();
+  const {isOpen, onOpen, onClose} = useDisclosure();
   return (
     <>
       <Flex
@@ -114,39 +112,19 @@ function Header() {
               orientation="vertical"
             />
           </Center>
-          <NavLink>
-            <Flex
-              overflow={"hidden"}
-              backgroundColor={colors.bg.primary}
-              justifyContent={"center"}
-              alignItems={"center"}
-              borderRadius={50}
-              // w={45}
-            >
-              <Menu>
-                <MenuButton as={Link}>
-                  <Image
-                    src={ProfilePic}
-                    alt="Settings"
-                    boxSize="40px"
-                    borderRadius="full"
-                  />
-                </MenuButton>
-                <MenuList>
-                  <MenuItem>Profile</MenuItem>
-                  <MenuItem>Account Settings</MenuItem>
-                  <MenuItem>Notifications</MenuItem>
-                  <MenuDivider
-                    borderColor={colors.bg.primary}
-                    borderWidth={2}
-                  />
-                  <MenuItem>Logout</MenuItem>
-                </MenuList>
-              </Menu>
-              {/* <Image w={30} src={ProfilePic} /> */}
-              {/* <Dropdown/> */}
-            </Flex>
-          </NavLink>
+          <Box
+          cursor={'pointer'}
+                    overflow={"hidden"}
+                    backgroundColor={colors.bg.primary}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    borderRadius={50}
+                    w={45}
+                    mr={1}
+                  >
+                    <Image w={30} src={ProfilePic} onClick={onOpen} />
+                    <CustomDrawer isOpen={isOpen} onClose={onClose}/>
+                  </Box>
         </Flex>
       </Flex>
     </>
