@@ -1,4 +1,4 @@
-import { FaEnvelope, FaLock, FaRegBell, FaCommentDots } from "react-icons/fa";
+import { FaEnvelope, FaLock, FaRegBell, FaCommentDots, FaGoogle } from "react-icons/fa";
 import { HiMiniPencilSquare } from "react-icons/hi2";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
@@ -21,4 +21,5 @@ export const customIcons = {
   BiSolidBookmark:BiSolidBookmark,
   SlUserFollow:SlUserFollow,
   SlUserFollowing:SlUserFollowing,
+  google:FaGoogle
 };

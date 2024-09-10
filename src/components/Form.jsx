@@ -8,6 +8,7 @@ import {
   VStack,
   Divider,
   useToast,
+  Icon,
 } from "@chakra-ui/react";
 import { colors } from "../theme/colors";
 import { customIcons } from "../theme/icons";
@@ -15,7 +16,6 @@ import { Link, useLocation } from "react-router-dom";
 import { UnAuthenticatedRoutesNames } from "../utilities/util.const";
 import { useFirebase } from "../context/Firebase";
 import InputGroup from "./InputGroup";
-
 
 const Form = () => {
   const [email, setEmail] = useState("");
@@ -42,14 +42,38 @@ const Form = () => {
   };
 
   const showToast = (title, description, status) => {
+    const bgColor = status === 'success' ? 'green.500' : 'red.500';
     toast({
       title,
       description,
       status,
+      bg: bgColor || colors.bg.accent,
       duration: 2000,
       isClosable: true,
       position: "top",
+      containerStyle: {
+        bg: bgColor,
+      },
     });
+  };
+
+  const handleGoogleSignIn = () => {
+    FirebaseContext.signInWithGoogle()
+      .then((user) => {
+        showToast(
+          "Logged in",
+          `Welcome ${user.displayName}`,
+          "success",
+        );
+      })
+      .catch((err) => {
+        showToast(
+          "Error",
+          "Google Sign-In failed. Please try again.",
+          "error",
+        );
+        console.error(err);
+      });
   };
 
   const FormSubmitHandler = (e) => {
@@ -91,7 +115,7 @@ const Form = () => {
             isSignup
               ? "Account has been Created Successfully!"
               : "Successfully Logged in",
-            "success"
+            "success",
           );
         })
         .catch((err) => {
@@ -100,7 +124,7 @@ const Form = () => {
           showToast(
             "Error",
             "Authentication failed. Please try again.",
-            "error"
+            "error",
           );
           console.error(err);
         });
@@ -120,7 +144,7 @@ const Form = () => {
           overflow="hidden"
         >
           <Heading mb={8} textAlign="center" color={colors.text.primary}>
-            {isSignup ? "Sign Up" : "Login"}
+            {isSignup ? "Join Aurora" : "Login"}
           </Heading>
           <form onSubmit={FormSubmitHandler}>
             <VStack spacing={5}>
@@ -162,6 +186,7 @@ const Form = () => {
               )}
             </VStack>
             <Button
+              borderRadius={50}
               mt={8}
               w="full"
               bg={colors.bg.accent}
@@ -179,6 +204,7 @@ const Form = () => {
           <Text textAlign="center" color={colors.text.primary}>
             {isSignup ? "Already have an account? " : "Don't have an account? "}
             <Link
+              // mb={2}
               to={
                 isSignup
                   ? UnAuthenticatedRoutesNames.Login
@@ -191,7 +217,22 @@ const Form = () => {
             >
               {isSignup ? "Login" : "Create one"}
             </Link>
+            <br />
+            <span> OR</span>
           </Text>
+
+          <Button
+            mt={4}
+            w="full"
+            size="lg"
+            // colorScheme="teal"
+            color={colors.bg.accent}
+            borderRadius={50}
+            onClick={handleGoogleSignIn}
+            leftIcon={<Icon as={customIcons.google} />}
+          >
+            Sign in with Google
+          </Button>
         </Box>
       </Flex>
     </>
