@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -24,29 +24,42 @@ const googleProvider = new GoogleAuthProvider();
 
 export const useFirebase = () => useContext(FirebaseContext);
 
-const signupUserWithEmailAndPassword = (email, password) => {
-  return createUserWithEmailAndPassword(auth, email, password);
-};
-const signInUserWithEmailAndPassword = (email, password) => {
-  return signInWithEmailAndPassword(auth, email, password);
-};
-const signInWithGoogle = () => {
-    return signInWithPopup(auth, googleProvider)
-    .then((result) => {
-      return result.user;
-    })
-    .catch((err) => {
-      console.error(err);
-      throw err;
-    });
-};
 export const FirebaseProvider = (props) => {
+  const [token, setToken] = useState(null);
+
+  const signupUserWithEmailAndPassword = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+  const signInUserWithEmailAndPassword = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+  const signInWithGoogle = async() => {
+    try{
+      const result = await signInWithPopup(auth,googleProvider);
+      const userToken = result.user.refreshToken;
+      setToken(userToken);
+      console.log(result.user.refreshToken,'token');
+    }catch{
+      console.log('error');
+    }
+    // return signInWithPopup(auth, googleProvider)
+    //   .then((result) => {
+    //     setToken(result.user.accessToken);
+    //     console.log(result.user.accessToken, "token");
+    //     return result.user.accessToken;
+    //   })
+    //   .catch((err) => {
+    //     console.error(err);
+    //     throw err;
+    //   });
+  };
   return (
     <FirebaseContext.Provider
       value={{
         signupUserWithEmailAndPassword,
         signInUserWithEmailAndPassword,
         signInWithGoogle,
+        token,
       }}
     >
       {props.children}

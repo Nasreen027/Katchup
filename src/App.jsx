@@ -5,7 +5,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 import AuthenticatedRoutes from "./routes/AuthenticatedRoutes";
 import UnAuthenticatedRoutes from "./routes/UnAuthenticatedRoutes";
-import { FirebaseProvider } from "./context/Firebase";
+import { FirebaseProvider, useFirebase } from "./context/Firebase";
 
 const AppContainer = styled.div`
   // backgroundColor:${colors.bg.primary};
@@ -16,22 +16,29 @@ const AppContainer = styled.div`
 
 export const CustomHeading = styled.h1`
   font-family: cursive;
-  font-size:30px;
-  font-weight:bold;
+  font-size: 30px;
+  font-weight: bold;
 `;
 
 function App() {
+  const context = useFirebase();
+  const token = context?.token;
+  if (!token) {
+    // console.log("user does not exist");
+  } else {
+    // console.log(token, "token from app");
+  }
   return (
     <>
       <ChakraProvider>
         <BrowserRouter>
-        <FirebaseProvider>
-          <AppContainer>
-            {/* <CustomContainer> */}
-            <AuthenticatedRoutes />
-            <UnAuthenticatedRoutes />
-            {/* </CustomContainer> */}
-          </AppContainer>
+          <FirebaseProvider>
+            <AppContainer>
+              {/* <CustomContainer> */}
+              <AuthenticatedRoutes />
+              <UnAuthenticatedRoutes />
+              {/* </CustomContainer> */}
+            </AppContainer>
           </FirebaseProvider>
         </BrowserRouter>
       </ChakraProvider>

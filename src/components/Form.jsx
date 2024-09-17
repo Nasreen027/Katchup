@@ -17,6 +17,12 @@ import { UnAuthenticatedRoutesNames } from "../utilities/util.const";
 import { useFirebase } from "../context/Firebase";
 import InputGroup from "./InputGroup";
 
+ // const signInWithGoogle = async () => {
+  //   const result = await signInWithPopup(auth, googleProvider);
+  //   setToken(result.user.refreshToken);
+  //   console.log('token',result.user.refreshToken)
+  // };
+
 const Form = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -60,6 +66,7 @@ const Form = () => {
   const handleGoogleSignIn = () => {
     FirebaseContext.signInWithGoogle()
       .then((user) => {
+        // console.log(user,'user');
         showToast(
           "Logged in",
           `Welcome ${user.displayName}`,
@@ -144,7 +151,7 @@ const Form = () => {
           overflow="hidden"
         >
           <Heading mb={8} textAlign="center" color={colors.text.primary}>
-            {isSignup ? "Join Aurora" : "Login"}
+            {isSignup ? "Join Aurora" : "Welcome Back"}
           </Heading>
           <form onSubmit={FormSubmitHandler}>
             <VStack spacing={5}>
@@ -199,7 +206,7 @@ const Form = () => {
             </Button>
           </form>
 
-          <Divider my={8} borderColor={colors.text.secondary} />
+          <Divider my={2} borderColor={colors.text.secondary} />
 
           <Text textAlign="center" color={colors.text.primary}>
             {isSignup ? "Already have an account? " : "Don't have an account? "}
@@ -222,7 +229,7 @@ const Form = () => {
           </Text>
 
           <Button
-            mt={4}
+            mt={2}
             w="full"
             size="lg"
             // colorScheme="teal"

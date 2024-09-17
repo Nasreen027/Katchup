@@ -35,7 +35,7 @@ function ClientHeader() {
               orientation="vertical"
             />
           </Center>
-          <NavLink to={UnAuthenticatedRoutesNames.Login}>Write</NavLink>
+          <NavLink to={UnAuthenticatedRoutesNames.Register}>Write</NavLink>
           <Center height="40px">
             <Divider
               borderColor={"#e1d6c5"}
