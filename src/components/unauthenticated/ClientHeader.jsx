@@ -19,7 +19,8 @@ function ClientHeader() {
       <Flex
         position={"relative"}
         style={{ top: 7 }}
-        boxShadow={"0 5px 5px rgba(0, 0, 0, 0.5)"}
+        borderBottom={'1px solid #660033'}
+        // boxShadow={"0 5px 5px rgba(0, 0, 0, 0.5)"}
         p={3}
         fontSize={18}
       >
@@ -30,7 +31,7 @@ function ClientHeader() {
           <NavLink to={UnAuthenticatedRoutesNames.About}>About us</NavLink>
           <Center height="40px">
             <Divider
-              borderColor={"#e1d6c5"}
+              borderColor={"#660033"}
               borderWidth={2}
               orientation="vertical"
             />
@@ -38,7 +39,7 @@ function ClientHeader() {
           <NavLink to={UnAuthenticatedRoutesNames.Register}>Write</NavLink>
           <Center height="40px">
             <Divider
-              borderColor={"#e1d6c5"}
+              borderColor={"#660033"}
               borderWidth={2}
               orientation="vertical"
             />

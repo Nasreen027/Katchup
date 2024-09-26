@@ -3,23 +3,28 @@ import { Outlet } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 import ClientHeader from "../components/unauthenticated/clientHeader";
 import Footer from "../components/Footer";
+import styled from "styled-components";
+
+const MainClientComponent = styled.div`
+  background-color: #e1d6c5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
+const ContentWrapper = styled.div`
+  flex-grow: 1;
+`;
 
 const ClientLayout = () => {
-  // const CustomContainer = styled.div`
-  //   width: 80%;
-  //   margin: 0 auto;
-  //   position: relative;
-  //   top: 90px;
-  // `;
-
   return (
-    <>
+    <MainClientComponent>
       <ClientHeader />
-      <Box>
+      <ContentWrapper>
         <Outlet />
-      </Box>
-      <Footer/>
-    </>
+      </ContentWrapper>
+      <Footer />
+    </MainClientComponent>
   );
 };
 
