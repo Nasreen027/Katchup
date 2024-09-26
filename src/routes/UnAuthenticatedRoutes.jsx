@@ -12,10 +12,7 @@ const UnAuthenticatedRoutes = () => {
     <>
       <Routes>
         <Route element={<ClientLayout />}>
-          <Route
-            path={UnAuthenticatedRoutesNames.NotFound}
-            element={<NotFound />}
-          />
+          <Route path={UnAuthenticatedRoutesNames.NotFound} element={<NotFound />}/>
           <Route path={UnAuthenticatedRoutesNames.About} element={<About />} />
         </Route>
         <Route

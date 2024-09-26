@@ -1,7 +1,6 @@
 import { Flex, Image } from '@chakra-ui/react';
 import React from 'react';
 import NotFoundImage from '../assets/404.png';
-import { colors } from '../theme/colors';
 
 function NotFound() {
   return (
