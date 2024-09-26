@@ -5,7 +5,7 @@ import Register from "../pages/Register";
 import ClientLayout from "../Layout/ClientLayout";
 import Login from "../pages/Login";
 import About from "../pages/About";
-import NotFound from "../pages/notFound";
+import NotFound from "../pages/NotFound";
 
 const UnAuthenticatedRoutes = () => {
   return (
