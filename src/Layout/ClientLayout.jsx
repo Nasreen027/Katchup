@@ -1,6 +1,5 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Box } from "@chakra-ui/react";
 import Footer from "../components/Footer";
 import styled from "styled-components";
 import ClientHeader from "../components/unauthenticated/ClientHeader";
