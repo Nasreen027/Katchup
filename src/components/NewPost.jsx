@@ -39,7 +39,9 @@ function NewPost() {
           fontSize={45}
           as={customIcons.newPostCreate}
         />
-        <Box width={"70%"}>
+        <Box 
+        width={"70%"}
+        >
           <Textarea
             onChange={(e) => setStory(e.target.value)}
             fontFamily={"serif"}
@@ -55,7 +57,9 @@ function NewPost() {
           />
         </Box>
       </Flex>
-      <Flex w={"73%"} justifyContent={"flex-end"}>
+      <Flex 
+      w={"73%"}
+       justifyContent={"flex-end"}>
         <Button
           borderRadius={50}
           backgroundColor={colors.bg.accent}

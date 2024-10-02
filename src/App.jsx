@@ -10,8 +10,7 @@ import { FirebaseProvider, useFirebase } from "./context/Firebase";
 const AppContainer = styled.div`
   // backgroundColor:${colors.bg.primary};
   // background-color:#F5F5F5;
-  // height:2000px;
-  // width:100px;
+
 `;
 
 export const CustomHeading = styled.h1`

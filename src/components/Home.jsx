@@ -9,7 +9,9 @@ function Home() {
     <>
       <Box>
         {/* <CustomHeading p={3} borderbottom={"2px solid #e1d6c5"} mb={8} as={"h1"}> */}
-        <Heading p={3} borderBottom={"2px solid #e1d6c5"} mb={8} as={"h1"}>
+        <Heading
+         p={3}
+          borderBottom={"2px solid #e1d6c5"} mb={8} as={"h1"}>
           Posts
           </Heading>
         {/* </CustomHeading> */}

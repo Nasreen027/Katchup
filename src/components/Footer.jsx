@@ -6,7 +6,7 @@ const Footer = () => {
     <Box
       position="relative"
       bottom="0"
-      width="100%"
+      // width="100%"
       borderTop="1px solid #660033"
       py={4}
       // bg="#fff"
