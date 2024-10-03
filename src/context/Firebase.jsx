@@ -1,11 +1,12 @@
 import { initializeApp } from "firebase/app";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   getAuth,
   GoogleAuthProvider,
   signInWithEmailAndPassword,
   signInWithPopup,
+  onAuthStateChanged,
 } from "firebase/auth";
 
 const firebaseConfig = {
@@ -22,47 +23,55 @@ const FirebaseContext = createContext(null);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
-export const useFirebase = () => useContext(FirebaseContext);
 
 export const FirebaseProvider = (props) => {
   const [token, setToken] = useState(null);
-
+  
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const userToken = await user.getIdToken();
+        setToken(userToken);
+      } else {
+        setToken(null); // User is signed out
+      }
+    });
+    
+    // Cleanup subscription on unmount
+    return () => unsubscribe();
+  }, []);
+  
   const signupUserWithEmailAndPassword = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
+  
   const signInUserWithEmailAndPassword = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
-  const signInWithGoogle = async() => {
-    try{
-      const result = await signInWithPopup(auth,googleProvider);
-      const userToken = result.user.refreshToken;
+  
+  const signInWithGoogle = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const userToken = await result.user.getIdToken();
       setToken(userToken);
-      console.log(result.user.refreshToken,'token');
-    }catch{
-      console.log('error');
+      console.log(userToken, "token");
+    } catch (error) {
+      console.log("error signing in with Google:", error);
     }
-    // return signInWithPopup(auth, googleProvider)
-    //   .then((result) => {
-    //     setToken(result.user.accessToken);
-    //     console.log(result.user.accessToken, "token");
-    //     return result.user.accessToken;
-    //   })
-    //   .catch((err) => {
-    //     console.error(err);
-    //     throw err;
-    //   });
   };
+  
   return (
     <FirebaseContext.Provider
-      value={{
-        signupUserWithEmailAndPassword,
-        signInUserWithEmailAndPassword,
-        signInWithGoogle,
-        token,
-      }}
+    value={{
+      signupUserWithEmailAndPassword,
+      signInUserWithEmailAndPassword,
+      signInWithGoogle,
+      token,
+    }}
     >
       {props.children}
     </FirebaseContext.Provider>
   );
 };
+  
+export const useFirebase = () => useContext(FirebaseContext);

@@ -6,13 +6,17 @@ import ClientLayout from "../Layout/ClientLayout";
 import Login from "../pages/Login";
 import About from "../pages/About";
 import NotFound from "../pages/NotFound";
+import ClientHome from "../pages/ClientHome";
 
 const UnAuthenticatedRoutes = () => {
   return (
     <>
       <Routes>
         <Route element={<ClientLayout />}>
-          <Route path={UnAuthenticatedRoutesNames.NotFound} element={<NotFound />}/>
+          <Route
+            path={UnAuthenticatedRoutesNames?.ClientHome}
+            element={<ClientHome />}
+          />
           <Route path={UnAuthenticatedRoutesNames.About} element={<About />} />
         </Route>
         <Route
@@ -20,6 +24,10 @@ const UnAuthenticatedRoutes = () => {
           element={<Register />}
         />
         <Route path={UnAuthenticatedRoutesNames.Login} element={<Login />} />
+          <Route
+            path='*'
+            element={<NotFound />}
+          />
       </Routes>
     </>
   );
