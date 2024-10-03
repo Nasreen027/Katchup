@@ -12,8 +12,8 @@ import {
 } from "@chakra-ui/react";
 import { colors } from "../theme/colors";
 import { customIcons } from "../theme/icons";
-import { Link, useLocation } from "react-router-dom";
-import { UnAuthenticatedRoutesNames } from "../utilities/util.const";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthenticatedRoutesNames, UnAuthenticatedRoutesNames } from "../utilities/util.const";
 import { useFirebase } from "../context/Firebase";
 import InputGroup from "./InputGroup";
 
@@ -30,6 +30,7 @@ const Form = () => {
   const [passwordError, setPasswordError] = useState("");
   const [isSignup, setIsSignup] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const toast = useToast();
 
   const FirebaseContext = useFirebase();
@@ -124,6 +125,8 @@ const Form = () => {
               : "Successfully Logged in",
             "success",
           );
+          navigate(AuthenticatedRoutesNames?.Home)
+
         })
         .catch((err) => {
           setEmail("");

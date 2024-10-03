@@ -7,7 +7,9 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
+import { UnAuthenticatedRoutesNames } from "../utilities/util.const";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCyU20JzC6W_8qHRdQtM5AkUZFVfEY2N5c",
@@ -23,10 +25,9 @@ const FirebaseContext = createContext(null);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
-
 export const FirebaseProvider = (props) => {
   const [token, setToken] = useState(null);
-  
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
@@ -36,19 +37,19 @@ export const FirebaseProvider = (props) => {
         setToken(null); // User is signed out
       }
     });
-    
+
     // Cleanup subscription on unmount
     return () => unsubscribe();
   }, []);
-  
+
   const signupUserWithEmailAndPassword = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
-  
+
   const signInUserWithEmailAndPassword = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
-  
+
   const signInWithGoogle = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
@@ -59,19 +60,29 @@ export const FirebaseProvider = (props) => {
       console.log("error signing in with Google:", error);
     }
   };
-  
+
+  const Logout = async () => {
+    try {
+      signOut(auth);
+      console.log("user logged out successfully!");
+    } catch (err) {
+      console.log("error logging out!", err);
+    }
+  };
+
   return (
     <FirebaseContext.Provider
-    value={{
-      signupUserWithEmailAndPassword,
-      signInUserWithEmailAndPassword,
-      signInWithGoogle,
-      token,
-    }}
+      value={{
+        signupUserWithEmailAndPassword,
+        signInUserWithEmailAndPassword,
+        signInWithGoogle,
+        Logout,
+        token,
+      }}
     >
       {props.children}
     </FirebaseContext.Provider>
   );
 };
-  
+
 export const useFirebase = () => useContext(FirebaseContext);

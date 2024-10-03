@@ -17,15 +17,23 @@ import {
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import ProfilePic from "../assets/myProfile.png";
 import { colors } from "../theme/colors";
+import { useFirebase } from "../context/Firebase";
 
 const CustomDrawer = ({ isOpen, onClose }) => {
   const btnRef = React.useRef();
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate();
 
   const handleNavigation = (path) => {
-    navigate(path); // Programmatically navigate to the specified path
-    onClose(); // Close the drawer after navigation
+    navigate(path); 
+    onClose();
   };
+
+  const context = useFirebase();
+  console.log(context,'context');
+
+  const handleLogout = () => {
+    context?.Logout();
+  }
 
   return (
     <>
@@ -84,7 +92,7 @@ const CustomDrawer = ({ isOpen, onClose }) => {
                 p={4}
                 borderTop="2px solid #e1d6c5"
                 cursor="pointer"
-                onClick={() => handleNavigation("/section3")}
+                onClick={handleLogout}
               >
                 <Text>Logout</Text>
               </Box>

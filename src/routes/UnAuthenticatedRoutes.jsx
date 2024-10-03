@@ -18,16 +18,16 @@ const UnAuthenticatedRoutes = () => {
             element={<ClientHome />}
           />
           <Route path={UnAuthenticatedRoutesNames.About} element={<About />} />
+        <Route
+          path='*'
+          element={<NotFound />}
+        />
         </Route>
         <Route
           path={UnAuthenticatedRoutesNames.Register}
           element={<Register />}
         />
         <Route path={UnAuthenticatedRoutesNames.Login} element={<Login />} />
-          <Route
-            path='*'
-            element={<NotFound />}
-          />
       </Routes>
     </>
   );

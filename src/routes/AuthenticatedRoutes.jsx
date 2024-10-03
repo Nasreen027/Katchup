@@ -14,8 +14,8 @@ const AuthenticatedRoutes = () => {
         <Route path={AuthenticatedRoutesNames.Home} element={<Home />} />
         <Route path={AuthenticatedRoutesNames.NewPost} element={<NewPost />} />
         <Route path={UnAuthenticatedRoutesNames.About} element={<About />} />
-      </Route>
         <Route path={"*"} element={<NotFound />} />
+      </Route>
     </Routes>
   );
 };
