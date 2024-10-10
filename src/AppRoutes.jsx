@@ -6,12 +6,13 @@ import { Spinner, Flex } from "@chakra-ui/react";
 
 const AppRoutes = () => {
   const { token } = useFirebase();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+//   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchToken = async () => {
       if (token !== null) {
-        setLoading(false);
+        // setLoading(false);
       }
     };
 
