@@ -9,15 +9,16 @@ const AppRoutes = () => {
   const [loading, setLoading] = useState(false);
 //   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchToken = async () => {
-      if (token !== null) {
-        // setLoading(false);
-      }
-    };
 
-    fetchToken();
-  }, [token]);
+//   useEffect(() => {
+//     const fetchToken = async () => {
+//       if (token !== null) {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchToken();
+//   }, [token]);
 
   if (loading) {
     return (

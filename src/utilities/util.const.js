@@ -6,5 +6,5 @@ export const UnAuthenticatedRoutesNames={
     Register:"/signup",
     Login:"/login",
     About:"/about",
-    ClientHome:"/client-home"
+    ClientHome:"/"
 }
