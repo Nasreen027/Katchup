@@ -1,6 +1,8 @@
 export const AuthenticatedRoutesNames = {
     Home:"/",
-    NewPost:"/newPost",
+    NewPost:"/new-post",
+    MyProfile:'/profile',
+    Setting:'/settings',
 }
 export const UnAuthenticatedRoutesNames={
     Register:"/signup",

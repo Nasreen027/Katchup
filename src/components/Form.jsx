@@ -67,7 +67,7 @@ const Form = () => {
   const handleGoogleSignIn = () => {
     FirebaseContext.signInWithGoogle()
       .then((user) => {
-        // console.log(user,'user');
+        console.log(user,'user');
         showToast(
           "Logged in",
           `Welcome ${user.displayName}`,

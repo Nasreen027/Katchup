@@ -6,6 +6,8 @@ import Home from "../components/Home";
 import NewPost from "../components/NewPost";
 import NotFound from "../pages/NotFound";
 import About from "../pages/About";
+import Profile from "../pages/Profile";
+import Settings from "../pages/Settings";
 
 const AuthenticatedRoutes = () => {
   return (
@@ -14,6 +16,8 @@ const AuthenticatedRoutes = () => {
         <Route path={AuthenticatedRoutesNames.Home} element={<Home />} />
         <Route path={AuthenticatedRoutesNames.NewPost} element={<NewPost />} />
         <Route path={UnAuthenticatedRoutesNames.About} element={<About />} />
+        <Route path={AuthenticatedRoutesNames?.MyProfile} element={<Profile />} />
+        <Route path={AuthenticatedRoutesNames?.Setting} element={<Settings />} />
         <Route path={"*"} element={<NotFound />} />
       </Route>
     </Routes>

@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate
 import ProfilePic from "../assets/myProfile.png";
 import { colors } from "../theme/colors";
 import { useFirebase } from "../context/Firebase";
+import { AuthenticatedRoutesNames } from "../utilities/util.const";
 
 const CustomDrawer = ({ isOpen, onClose }) => {
   const btnRef = React.useRef();
@@ -29,7 +30,7 @@ const CustomDrawer = ({ isOpen, onClose }) => {
   };
 
   const context = useFirebase();
-  console.log(context,'context');
+  // console.log(context,'context');
 
   const handleLogout = () => {
     context?.Logout();
@@ -70,16 +71,16 @@ const CustomDrawer = ({ isOpen, onClose }) => {
                 p={4}
                 borderBottom="1px solid #e1d6c5"
                 cursor="pointer"
-                onClick={() => handleNavigation("/section1")}
+                onClick={() => handleNavigation(AuthenticatedRoutesNames?.MyProfile)}
               >
-                <Text>Your Profile</Text>
+                <Text>Profile</Text>
               </Box>
               <Box
                 w="100%"
                 p={4}
                 borderBottom="1px solid #e1d6c5"
                 cursor="pointer"
-                onClick={() => handleNavigation("/section2")}
+                onClick={() => handleNavigation(AuthenticatedRoutesNames?.Setting)}
               >
                 <Text>Settings</Text>
               </Box>
