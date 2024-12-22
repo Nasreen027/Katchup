@@ -8,6 +8,7 @@ import NotFound from "../pages/NotFound";
 import About from "../pages/About";
 import Profile from "../pages/Profile";
 import Settings from "../pages/Settings";
+import PostDetail from "../pages/PostDetail";
 
 const AuthenticatedRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const AuthenticatedRoutes = () => {
       <Route element={<MainLayout />}>
         <Route path={AuthenticatedRoutesNames.Home} element={<Home />} />
         <Route path={AuthenticatedRoutesNames.NewPost} element={<NewPost />} />
+        <Route path={AuthenticatedRoutesNames.PostDetail} element={<PostDetail />} />
         <Route path={UnAuthenticatedRoutesNames.About} element={<About />} />
         <Route path={AuthenticatedRoutesNames?.MyProfile} element={<Profile />} />
         <Route path={AuthenticatedRoutesNames?.Setting} element={<Settings />} />

@@ -15,13 +15,13 @@ const MainLayout = () => {
 
   const ContentWrapper = styled.div`
     flex-grow: 1;
-    min-height:100vh;
+    min-height: 100vh;
   `;
 
   return (
     <>
       <Header />
-      <Box px={20} py={10}>
+      <Box px={200} py={10}>
         <ContentWrapper>
           <Outlet />
         </ContentWrapper>

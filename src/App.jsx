@@ -11,7 +11,7 @@ export const CustomHeading = styled.h1`
   font-weight: bold;
 `;
 const AppContainer = styled.div`
-  
+  margin:0 auto;
 `;
 
 function App() {
