@@ -30,7 +30,11 @@ const AppRoutes = () => {
 
   return (
     <>
-      {token ? <AuthenticatedRoutes /> : <UnAuthenticatedRoutes />}
+      {/* {token ? */}
+       <AuthenticatedRoutes />
+        {/* // :  */}
+       <UnAuthenticatedRoutes />
+      {/* //  } */}
     </>
   );
 };

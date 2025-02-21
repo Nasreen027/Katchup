@@ -18,10 +18,10 @@ const UnAuthenticatedRoutes = () => {
             element={<ClientHome />}
           />
           <Route path={UnAuthenticatedRoutesNames.About} element={<About />} />
-        <Route
+        {/* <Route
           path='*'
           element={<NotFound />}
-        />
+        /> */}
         </Route>
         <Route
           path={UnAuthenticatedRoutesNames.Register}

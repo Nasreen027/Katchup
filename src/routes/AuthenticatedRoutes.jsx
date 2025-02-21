@@ -20,7 +20,7 @@ const AuthenticatedRoutes = () => {
         <Route path={UnAuthenticatedRoutesNames.About} element={<About />} />
         <Route path={AuthenticatedRoutesNames?.MyProfile} element={<Profile />} />
         <Route path={AuthenticatedRoutesNames?.Setting} element={<Settings />} />
-        <Route path={"*"} element={<NotFound />} />
+        {/* <Route path={"*"} element={<NotFound />} /> */}
       </Route>
     </Routes>
   );
