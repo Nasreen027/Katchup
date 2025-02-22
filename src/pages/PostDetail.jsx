@@ -13,7 +13,13 @@ import { colors } from "../theme/colors";
 import ProfilePic from "../assets/myProfile.png";
 import AI from "../assets/ai.jpg";
 import { customIcons } from "../theme/icons";
+import styled from "styled-components";
 
+const CustomText = styled.p`
+  color: ${colors.text.primary};
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+`;
 const PostDetail = () => {
   const [like, setLike] = useState(false);
   const [bookmark, setBookMark] = useState(false);
@@ -21,15 +27,17 @@ const PostDetail = () => {
   return (
     <>
       <Flex justifyContent={"center"} alignItems={"center"} lineHeight={6}>
-        <Box w={"20%"}></Box>
-        <Box w={"70%"}>
-          <Heading fontSize={50} fontFamily={"sans-serif"} mb={3}>
+        <Box 
+        w={{base:"0%", md:"20%"}}
+        ></Box>
+        <Box w={{base:"100%", md:"70%"}}>
+          <Heading fontSize={{base:"1.6rem", md:"2.125rem"}} fontFamily={"sans-serif"} mb={'0.188'}>
             The Upcoming World With Artificial Intelligence
           </Heading>
-          <Text color={colors.text.primary} fontSize={20} mb={3}>
+          <CustomText>
             Porro iusto voluptatibus vel aspernatur eaque rem facere mollitia
             quisquam a iste commodi aut?
-          </Text>
+          </CustomText>
           <Flex alignItems={"center"} mb={10}>
             <Box
               overflow={"hidden"}
@@ -57,8 +65,8 @@ const PostDetail = () => {
           </Flex>
           <Flex
             alignItems={"center"}
-            borderTop={'1px solid #e1d6c5'}
-            borderBottom={'1px solid #e1d6c5'}
+            borderTop={"1px solid #e1d6c5"}
+            borderBottom={"1px solid #e1d6c5"}
             mb={10}
             // w={900}
             justifyContent={"space-between"}
@@ -138,17 +146,22 @@ const PostDetail = () => {
           </Flex>
           <Box
             overflow={"hidden"}
-            //   backgroundColor={colors.bg.primary}
             justifyContent={"center"}
             alignItems={"center"}
-            //   borderRadius={50}
-            //   w={45}
-            //   mr={5}
           >
-            <Image w={"100%"} src={AI} />
+            <Image w={"100%"} src={AI} mb={10} />
+            <CustomText>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque hic
+              voluptatem magnam voluptas nihil illum, perferendis rerum expedita
+              quibusdam quae adipisci error in, pariatur harum ab, modi odit
+              beatae. Dolor. Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Minima eum ducimus esse, ex ab veritatis, quaerat aliquid
+              autem, nulla laboriosam cupiditate vero placeat labore repellat
+              fuga delectus dolorum quod mollitia!
+            </CustomText>
           </Box>
         </Box>
-        <Box w={"20%"}></Box>
+        <Box w={{base:"0%", md:"20%"}}></Box>
       </Flex>
     </>
   );
