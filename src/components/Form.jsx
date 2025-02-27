@@ -109,7 +109,7 @@ const Form = () => {
     }
 
     if (isValid) {
-      // console.log(email, "email", password, "password");
+      console.log(email, "email", password, "password");
       const authAction = isSignup
         ? FirebaseContext.signupUserWithEmailAndPassword
         : FirebaseContext.signInUserWithEmailAndPassword;
