@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   Drawer,
@@ -20,40 +20,37 @@ import { colors } from "../theme/colors";
 import { useFirebase } from "../context/Firebase";
 import { AuthenticatedRoutesNames } from "../utilities/util.const";
 
-const CustomDrawer = ({ isOpen, onClose }) => {
+const CustomDrawer = ({ isOpen, onClose, mode, comments = [] }) => {
+  // const [mode, setMode] = useState("profile");
   const btnRef = React.useRef();
   const navigate = useNavigate();
 
   const handleNavigation = (path) => {
-    navigate(path); 
+    navigate(path);
     onClose();
   };
 
   const context = useFirebase();
-  // console.log(context,'context');
-
   const handleLogout = () => {
     context?.Logout();
-  }
+  };
 
   return (
-    <>
-      <Drawer
-        isOpen={isOpen}
-        placement="right"
-        onClose={onClose}
-        finalFocusRef={btnRef}
-      >
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader>
-            <Flex alignItems={'center'}>
+    <Drawer
+      isOpen={isOpen}
+      placement="right"
+      onClose={onClose}
+      finalFocusRef={btnRef}
+    >
+      <DrawerOverlay />
+      <DrawerContent>
+        <DrawerCloseButton />
+        <DrawerHeader>
+          {mode === "profile" ? (
+            <Flex alignItems="center">
               <Box
-                overflow={"hidden"}
+                overflow="hidden"
                 backgroundColor={colors.bg.primary}
-                justifyContent={"center"}
-                alignItems={"center"}
                 borderRadius={50}
                 w={45}
                 mr={2}
@@ -62,16 +59,22 @@ const CustomDrawer = ({ isOpen, onClose }) => {
               </Box>
               <Text>Iman027</Text>
             </Flex>
-          </DrawerHeader>
+          ) : (
+            <Text>Comments</Text>
+          )}
+        </DrawerHeader>
 
-          <DrawerBody>
+        <DrawerBody>
+          {mode === "profile" ? (
             <VStack spacing={4} align="stretch">
               <Box
                 w="100%"
                 p={4}
                 borderBottom="1px solid #e1d6c5"
                 cursor="pointer"
-                onClick={() => handleNavigation(AuthenticatedRoutesNames?.MyProfile)}
+                onClick={() =>
+                  handleNavigation(AuthenticatedRoutesNames?.MyProfile)
+                }
               >
                 <Text>Profile</Text>
               </Box>
@@ -80,28 +83,44 @@ const CustomDrawer = ({ isOpen, onClose }) => {
                 p={4}
                 borderBottom="1px solid #e1d6c5"
                 cursor="pointer"
-                onClick={() => handleNavigation(AuthenticatedRoutesNames?.Setting)}
+                onClick={() =>
+                  handleNavigation(AuthenticatedRoutesNames?.Setting)
+                }
               >
                 <Text>Settings</Text>
               </Box>
             </VStack>
-          </DrawerBody>
+          ) : (
+            <VStack spacing={4} align="stretch">
+              {comments.length > 0 ? (
+                comments.map((comment, index) => (
+                  <Box key={index} p={3} borderBottom="1px solid #e1d6c5">
+                    <Text fontWeight="bold">{comment.user}</Text>
+                    <Text>{comment.text}</Text>
+                  </Box>
+                ))
+              ) : (
+                <Text>No comments yet</Text>
+              )}
+            </VStack>
+          )}
+        </DrawerBody>
 
+        {mode === "profile" && (
           <DrawerFooter>
-          <Box
-                w="100%"
-                p={4}
-                borderTop="2px solid #e1d6c5"
-                cursor="pointer"
-                onClick={handleLogout}
-              >
-                <Text>Logout</Text>
-              </Box>
+            <Box
+              w="100%"
+              p={4}
+              borderTop="2px solid #e1d6c5"
+              cursor="pointer"
+              onClick={handleLogout}
+            >
+              <Text>Logout</Text>
+            </Box>
           </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-    </>
+        )}
+      </DrawerContent>
+    </Drawer>
   );
 };
-
 export default CustomDrawer;

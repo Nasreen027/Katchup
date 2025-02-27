@@ -122,7 +122,7 @@ function Header() {
             mr={1}
           >
             <Image w={30} src={ProfilePic} onClick={onOpen} />
-            <CustomDrawer isOpen={isOpen} onClose={onClose} />
+            <CustomDrawer isOpen={isOpen} onClose={onClose} mode={'profile'} />
           </Box>
         </Flex>
       </Flex>

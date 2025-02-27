@@ -6,6 +6,7 @@ import {
   Image,
   Link,
   Text,
+  useDisclosure,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { CustomHeading } from "../App";
@@ -14,6 +15,7 @@ import ProfilePic from "../assets/myProfile.png";
 import AI from "../assets/ai.jpg";
 import { customIcons } from "../theme/icons";
 import styled from "styled-components";
+import CustomDrawer from "../components/CustomDrawer";
 
 const CustomText = styled.p`
   color: ${colors.text.primary};
@@ -21,17 +23,20 @@ const CustomText = styled.p`
   margin-bottom: 3rem;
 `;
 const PostDetail = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const [like, setLike] = useState(false);
   const [bookmark, setBookMark] = useState(false);
   const [follow, setFollow] = useState(false);
   return (
     <>
       <Flex justifyContent={"center"} alignItems={"center"} lineHeight={6}>
-        <Box 
-        w={{base:"0%", md:"20%"}}
-        ></Box>
-        <Box w={{base:"100%", md:"70%"}}>
-          <Heading fontSize={{base:"1.6rem", md:"2.125rem"}} fontFamily={"sans-serif"} mb={'0.188'}>
+        <Box w={{ base: "0%", md: "20%" }}></Box>
+        <Box w={{ base: "100%", md: "70%" }}>
+          <Heading
+            fontSize={{ base: "1.6rem", md: "2.125rem" }}
+            fontFamily={"sans-serif"}
+            mb={"0.188"}
+          >
             The Upcoming World With Artificial Intelligence
           </Heading>
           <CustomText>
@@ -91,8 +96,11 @@ const PostDetail = () => {
                 />
                 <span>23</span>
               </Link>
-              <Link _hover={{ textDecoration: "none" }}>
+              <Link _hover={{ textDecoration: "none" }} onClick={onOpen}>
                 <IconButton
+                  onClick={() => {
+                    showComments();
+                  }}
                   _hover={{
                     bg: "transparent",
                   }}
@@ -102,6 +110,11 @@ const PostDetail = () => {
                   icon={<customIcons.FaCommentDots />}
                 />
                 <span>76</span>
+                <CustomDrawer
+                  isOpen={isOpen}
+                  onClose={onClose}
+                  mode={"comments"}
+                />
               </Link>
             </Box>
             <Box flex={1}></Box>
@@ -161,7 +174,7 @@ const PostDetail = () => {
             </CustomText>
           </Box>
         </Box>
-        <Box w={{base:"0%", md:"20%"}}></Box>
+        <Box w={{ base: "0%", md: "20%" }}></Box>
       </Flex>
     </>
   );
