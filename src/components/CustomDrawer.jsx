@@ -14,8 +14,9 @@ import {
   Flex,
   Image,
   IconButton,
+  Link,
 } from "@chakra-ui/react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ProfilePic from "../assets/myProfile.png";
 import { colors } from "../theme/colors";
 import { useFirebase } from "../context/Firebase";
@@ -104,7 +105,7 @@ const CustomDrawer = ({ isOpen, onClose, mode, comments = [] }) => {
               ) : (
                 <Text>No comments yet</Text>
               )} */}
-              <Box borderBottom="1px solid #e1d6c5" p={3}>
+              <Box borderBottom="1px solid #e1d6c5" p={2}>
                 <Flex alignItems="center">
                   <Box
                     overflow="hidden"
@@ -120,19 +121,23 @@ const CustomDrawer = ({ isOpen, onClose, mode, comments = [] }) => {
                     <Text>Love the article!</Text>
                   </Box>
                 </Flex>
-                <Flex>
-                  <Link _hover={{ textDecoration: "none" }}>
-                    <IconButton
-                      _hover={{
-                        bg: "transparent",
-                      }}
-                      background={"transparent"}
-                      fontSize={25}
-                      border={"none"}
-                      // onClick={() => setBookMark(!bookmark)}
-                      icon={<customIcons.MdFavoriteBorder />}
-                    />
-                  </Link>
+                <Flex pt={3} justifyContent={"flex-end"} alignItems={"center"}>
+                  <Flex justifyContent={"center"} alignItems={'center'}>
+                    <Link _hover={{ textDecoration: "none" }} mr={3}>
+                      <IconButton
+                        mr={"-8px"}
+                        _hover={{
+                          bg: "transparent",
+                        }}
+                        background={"transparent"}
+                        fontSize={20}
+                        border={"none"}
+                        icon={<customIcons.MdFavoriteBorder />}
+                      />
+                      <span>23</span>
+                    </Link>
+                    <Link textDecoration="underline">Reply</Link>
+                  </Flex>
                 </Flex>
               </Box>
             </VStack>

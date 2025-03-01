@@ -22,7 +22,7 @@ const MainLayout = () => {
     <>
       <Header />
       <Box 
-      // px={{base:"2rem",md:"212.5rem"}}
+      px={{base:"1rem",md:"2rem"}}
        py={10}
        >
         <ContentWrapper>

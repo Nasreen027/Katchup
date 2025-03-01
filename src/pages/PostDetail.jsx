@@ -98,9 +98,9 @@ const PostDetail = () => {
               </Link>
               <Link _hover={{ textDecoration: "none" }} onClick={onOpen}>
                 <IconButton
-                  onClick={() => {
-                    showComments();
-                  }}
+                  // onClick={() => {
+                  //   showComments();
+                  // }}
                   _hover={{
                     bg: "transparent",
                   }}
