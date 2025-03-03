@@ -1,28 +1,19 @@
-import { Center, Divider, Flex } from "@chakra-ui/react";
+import { Box, Center, Divider, Flex } from "@chakra-ui/react";
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.const";
-
-const CustomLogo = styled.div`
-  font-size: 34px;
-  font-weight: bold;
-  text-decoration: none;
-  display: inline-block;
-  font-family: cursive;
-  margin-right: 33px;
-  color:
-`;
+import { CustomLogo } from "../../App";
+import { colors } from "../../theme/colors";
 
 function ClientHeader() {
   return (
     <>
       <Flex
+        color={colors.text.primary}
         position={"relative"}
         style={{ top: 7 }}
-        // borderBottom={'1px solid #660033'}
-        borderBottom={'1px solid white'}
-        // boxShadow={"0 5px 5px rgba(0, 0, 0, 0.5)"}
+        borderBottom={'1px solid #C0C0C0'}
         p={3}
         fontSize={18}
       >
@@ -32,18 +23,18 @@ function ClientHeader() {
         <Flex justifyContent={"space-between"} alignItems={"center"} w={230}>
           <NavLink to={UnAuthenticatedRoutesNames.About}>About us</NavLink>
           <Center height="40px">
-            <Divider
-              borderColor={"#660033"}
-              borderWidth={2}
-              orientation="vertical"
+            <Box
+              w="2px"
+              h="100%"
+              bgGradient={colors.bg.accent}
             />
           </Center>
           <NavLink to={UnAuthenticatedRoutesNames.Register}>Write</NavLink>
           <Center height="40px">
-            <Divider
-              borderColor={"#660033"}
-              borderWidth={2}
-              orientation="vertical"
+          <Box
+              w="2px"
+              h="100%"
+              bgGradient={colors.bg.accent}
             />
           </Center>
           <NavLink to={UnAuthenticatedRoutesNames.Login}>Sign in</NavLink>

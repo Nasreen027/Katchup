@@ -24,7 +24,7 @@ function SearchBar() {
               <IconButton
                 border={"none"}
                 backgroundColor={"transparent"}
-                icon={<customIcons.search fontSize={"25px"} />}
+                icon={<customIcons.search style={{fill:"white"}} fontSize={"25px"} />}
                 mt={15}
               />
             </InputRightElement>

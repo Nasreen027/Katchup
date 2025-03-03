@@ -30,7 +30,8 @@ function SinglePost() {
       <Card
         direction={{ base: "column", sm: "row" }}
         overflow="hidden"
-        variant="outline"
+        // variant="outline"
+        bg={colors.bg.primary}
       >
         <Image
           objectFit="cover"
@@ -40,7 +41,7 @@ function SinglePost() {
         />
 
         <Stack>
-          <CardBody>
+          <CardBody color={colors.text.primary}>
             <Flex>
               <Box>
                 <Heading size="md">The perfect latte</Heading>
@@ -55,7 +56,7 @@ function SinglePost() {
                 <Flex alignItems={"center"}>
                   <Box
                     overflow={"hidden"}
-                    backgroundColor={colors.bg.primary}
+                    background={colors.bg.accent}
                     justifyContent={"center"}
                     alignItems={"center"}
                     borderRadius={50}
@@ -85,6 +86,7 @@ function SinglePost() {
                       bg: "transparent",
                     }}
                     background={"transparent"}
+                    fill={"white"}
                     fontSize={25}
                     border={"none"}
                     onClick={() => setLike(!like)}
@@ -94,7 +96,7 @@ function SinglePost() {
                           style={{ color: "red" }}
                         />
                       ) : (
-                        <customIcons.MdFavoriteBorder />
+                        <customIcons.MdFavoriteBorder style={{ fill: "white" }} />
                       )
                     }
                   />
@@ -108,7 +110,7 @@ function SinglePost() {
                     background={"transparent"}
                     fontSize={25}
                     border={"none"}
-                    icon={<customIcons.FaCommentDots />}
+                    icon={<customIcons.FaCommentDots style={{ fill: "white" }} />}
                   />
                   <span>76</span>
                 </Link>
@@ -126,9 +128,9 @@ function SinglePost() {
                     onClick={() => setBookMark(!bookmark)}
                     icon={
                       bookmark === true ? (
-                        <customIcons.BiSolidBookmark />
+                        <customIcons.BiSolidBookmark style={{ fill: "white" }} />
                       ) : (
-                        <customIcons.BiBookmark />
+                        <customIcons.BiBookmark style={{ fill: "white" }} />
                       )
                     }
                   />
@@ -148,7 +150,7 @@ function SinglePost() {
                           style={{ color: "green" }}
                         />
                       ) : (
-                        <customIcons.SlUserFollow />
+                        <customIcons.SlUserFollow style={{ fill: "white" }} />
                       )
                     }
                   />

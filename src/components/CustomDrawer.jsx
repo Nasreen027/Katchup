@@ -46,14 +46,14 @@ const CustomDrawer = ({ isOpen, onClose, mode, comments = [] }) => {
       finalFocusRef={btnRef}
     >
       <DrawerOverlay />
-      <DrawerContent>
+      <DrawerContent bg={colors.bg.primary} color={colors.text.primary}>
         <DrawerCloseButton />
         <DrawerHeader>
           {mode === "profile" ? (
             <Flex alignItems="center">
               <Box
                 overflow="hidden"
-                backgroundColor={colors.bg.primary}
+                backgroundColor={colors.bg.secondary}
                 borderRadius={50}
                 w={45}
                 mr={2}
@@ -73,7 +73,7 @@ const CustomDrawer = ({ isOpen, onClose, mode, comments = [] }) => {
               <Box
                 w="100%"
                 p={4}
-                borderBottom="1px solid #e1d6c5"
+                borderBottom="1px solid #C0C0C0"
                 cursor="pointer"
                 onClick={() =>
                   handleNavigation(AuthenticatedRoutesNames?.MyProfile)
@@ -84,7 +84,7 @@ const CustomDrawer = ({ isOpen, onClose, mode, comments = [] }) => {
               <Box
                 w="100%"
                 p={4}
-                borderBottom="1px solid #e1d6c5"
+                borderBottom="1px solid #C0C0C0"
                 cursor="pointer"
                 onClick={() =>
                   handleNavigation(AuthenticatedRoutesNames?.Setting)
@@ -105,7 +105,7 @@ const CustomDrawer = ({ isOpen, onClose, mode, comments = [] }) => {
               ) : (
                 <Text>No comments yet</Text>
               )} */}
-              <Box borderBottom="1px solid #e1d6c5" p={2}>
+              <Box borderBottom="1px solid #C0C0C0" p={2}>
                 <Flex alignItems="center">
                   <Box
                     overflow="hidden"
@@ -149,7 +149,7 @@ const CustomDrawer = ({ isOpen, onClose, mode, comments = [] }) => {
             <Box
               w="100%"
               p={4}
-              borderTop="2px solid #e1d6c5"
+              borderTop="2px solid #C0C0C0"
               cursor="pointer"
               onClick={handleLogout}
             >

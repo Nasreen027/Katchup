@@ -199,8 +199,8 @@ const Form = () => {
               borderRadius={50}
               mt={8}
               w="full"
-              bg={colors.bg.accent}
-              color={colors.text.secondary}
+              bg={colors.button.bg}
+              color={colors.button.text}
               _hover={{ bg: "rgba(102, 0, 51, 0.75)" }}
               size="lg"
               type="submit"
@@ -209,7 +209,7 @@ const Form = () => {
             </Button>
           </form>
 
-          <Divider my={2} borderColor={colors.text.secondary} />
+          <Divider my={2} borderColor={colors.bg.accent} />
 
           <Text textAlign="center" color={colors.text.primary}>
             {isSignup ? "Already have an account? " : "Don't have an account? "}

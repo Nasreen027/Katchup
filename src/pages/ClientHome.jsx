@@ -16,6 +16,7 @@ const ClientHome = () => {
       p={{ base: 4, md: 8 }}
       mt={{ base: "20px", md: "50px", lg: "80px" }}
       // ml={{ base: "20px", md: "120px" }}
+      color={colors.text.primary}
     >
       <Box textAlign={{ base: "left", md: "left" }} mb={{ base: 6, md: 0 }}>
         <Heading fontSize={{ base: "6xl", md: "6xl", lg: "8xl", xl: "9xl" }}>
@@ -25,6 +26,7 @@ const ClientHome = () => {
           Your voice, your stories, shared with the world.
         </Text>
         <Button
+        background={colors.button.bg}
           mt={4}
           size="lg"
           onClick={() => navigate(UnAuthenticatedRoutesNames?.Register)}

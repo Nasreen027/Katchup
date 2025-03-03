@@ -23,15 +23,7 @@ import { customIcons } from "../theme/icons";
 import { AuthenticatedRoutesNames } from "../utilities/util.const";
 import { colors } from "../theme/colors";
 import CustomDrawer from "./CustomDrawer";
-
-const CustomLogo = styled.div`
-  font-size: 34px;
-  font-weight: bold;
-  text-decoration: none;
-  display: inline-block;
-  font-family: cursive;
-  margin-right: 33px;
-  `;
+import { CustomLogo } from "../App";
 
 function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -40,27 +32,28 @@ function Header() {
       <Flex
         position={"relative"}
         style={{ top: 7 }}
-        boxShadow={"0 5px 5px rgba(0, 0, 0, 0.5)"}
+        boxShadow={"0 5px 5px #1E1E1E"}
         p={3}
       >
-        <Flex flexGrow={1} justifyContent={{base:"center", md:"flex-start"}} >
+        <Flex flexGrow={1} justifyContent={{ base: "center", md: "flex-start" }} >
           <CustomLogo>Aurora</CustomLogo>
           <Box display={{ base: "none", md: "block" }}>
-          <SearchBar />
-        </Box>
+            <SearchBar />
+          </Box>
         </Flex>
         <Flex
-         display={{base:"none", md:"flex"}}
+        color={colors.text.primary}
+          display={{ base: "none", md: "flex" }}
           justifyContent={"space-between"} alignItems={"center"} w={190}>
           <NavLink to={AuthenticatedRoutesNames.NewPost}>
             <Flex>
-              <Icon fontSize={25} mr={1} as={customIcons.write} />
+              <Icon fontSize={25} mr={1} as={customIcons.write}  />
               <Text>Write</Text>
             </Flex>
           </NavLink>
           <Center height="40px">
             <Divider
-              borderColor={colors.bg.primary}
+              borderColor={colors.bg.secondary}
               borderWidth={2}
               orientation="vertical"
             />
@@ -68,6 +61,7 @@ function Header() {
           <Box position="relative">
             <Menu>
               <MenuButton
+              color={colors.text.primary}
                 _hover={{ background: "transparent" }}
                 as={IconButton}
                 background="transparent"
@@ -81,7 +75,7 @@ function Header() {
                       colorScheme="red"
                       borderRadius="50%"
                       position="absolute"
-                      top="-7px"
+                      top="-7px"  
                       right="-7px"
                       fontSize="0.8rem"
                       zIndex={1}
@@ -92,12 +86,12 @@ function Header() {
                 }
               />
 
-              <MenuList minWidth="300px" p={2} boxShadow="xl" borderRadius="md">
+              <MenuList backgroundColor={colors.bg.primary} minWidth="300px" p={2} boxShadow="xl" borderRadius="md">
                 <Text fontWeight="bold" mb={2}>
                   Notifications
                 </Text>
                 <Divider mb={2} />
-                <MenuItem _hover={{ backgroundColor: "#f5f5f5" }}>
+                <MenuItem backgroundColor={colors.bg.primary} _hover={{ backgroundColor: colors.bg.hover }}>
                   <Flex flexDirection="column" align="flex-start">
                     <Text fontWeight="medium">John liked your post</Text>
                     <Text fontSize="sm" color="gray.500">
@@ -110,7 +104,7 @@ function Header() {
           </Box>
           <Center height="40px">
             <Divider
-              borderColor={colors.bg.primary}
+              borderColor={colors.bg.secondary}
               borderWidth={2}
               orientation="vertical"
             />
@@ -118,7 +112,8 @@ function Header() {
           <Box
             cursor={"pointer"}
             overflow={"hidden"}
-            backgroundColor={colors.bg.primary}
+            // backgroundColor={colors.bg.secondary}
+            background={colors.bg.accent}
             justifyContent={"center"}
             alignItems={"center"}
             borderRadius={50}

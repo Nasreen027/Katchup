@@ -7,7 +7,7 @@ const Footer = () => {
       position="relative"
       bottom="0"
       // width="100%"
-      borderTop="1px solid white"
+      borderTop="1px solid #C0C0C0"
       py={4}
       // bg="#fff"
     >
