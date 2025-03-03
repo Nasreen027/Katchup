@@ -5,7 +5,7 @@ import { CiSearch } from "react-icons/ci";
 import { MdOutlineFavorite, MdFavoriteBorder } from "react-icons/md";
 import { BiBookmark, BiSolidBookmark } from "react-icons/bi";
 import { SlUserFollow, SlUserFollowing } from "react-icons/sl";
-
+import { VscThreeBars } from "react-icons/vsc";
 
 export const customIcons = {
   envelope: FaEnvelope,
@@ -21,5 +21,6 @@ export const customIcons = {
   BiSolidBookmark:BiSolidBookmark,
   SlUserFollow:SlUserFollow,
   SlUserFollowing:SlUserFollowing,
-  google:FaGoogle
+  google:FaGoogle,
+  threeBars:VscThreeBars,
 };

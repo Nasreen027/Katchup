@@ -11,6 +11,7 @@ const CustomLogo = styled.div`
   display: inline-block;
   font-family: cursive;
   margin-right: 33px;
+  color:
 `;
 
 function ClientHeader() {
@@ -19,7 +20,8 @@ function ClientHeader() {
       <Flex
         position={"relative"}
         style={{ top: 7 }}
-        borderBottom={'1px solid #660033'}
+        // borderBottom={'1px solid #660033'}
+        borderBottom={'1px solid white'}
         // boxShadow={"0 5px 5px rgba(0, 0, 0, 0.5)"}
         p={3}
         fontSize={18}

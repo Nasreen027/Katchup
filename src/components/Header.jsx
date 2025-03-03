@@ -31,7 +31,7 @@ const CustomLogo = styled.div`
   display: inline-block;
   font-family: cursive;
   margin-right: 33px;
-`;
+  `;
 
 function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -43,11 +43,15 @@ function Header() {
         boxShadow={"0 5px 5px rgba(0, 0, 0, 0.5)"}
         p={3}
       >
-        <Flex flexGrow={1}>
+        <Flex flexGrow={1} justifyContent={{base:"center", md:"flex-start"}} >
           <CustomLogo>Aurora</CustomLogo>
+          <Box display={{ base: "none", md: "block" }}>
           <SearchBar />
+        </Box>
         </Flex>
-        <Flex justifyContent={"space-between"} alignItems={"center"} w={190}>
+        <Flex
+         display={{base:"none", md:"flex"}}
+          justifyContent={"space-between"} alignItems={"center"} w={190}>
           <NavLink to={AuthenticatedRoutesNames.NewPost}>
             <Flex>
               <Icon fontSize={25} mr={1} as={customIcons.write} />

@@ -15,6 +15,7 @@ import React, { useState } from "react";
 import ProfilePic from "../assets/myProfile.png";
 import { colors } from "../theme/colors";
 import { customIcons } from "../theme/icons";
+import { AuthenticatedRoutesNames } from "../utilities/util.const";
 
 function SinglePost() {
   const [like, setLike] = useState(false);
@@ -23,6 +24,9 @@ function SinglePost() {
 
   return (
     <>
+    <Link _hover={{ textDecoration: "none" }}
+    //  to={AuthenticatedRoutesNames?.PostDetail}
+     >
       <Card
         direction={{ base: "column", sm: "row" }}
         overflow="hidden"
@@ -154,6 +158,7 @@ function SinglePost() {
           </CardFooter>
         </Stack>
       </Card>
+      </Link>
     </>
   );
 }
