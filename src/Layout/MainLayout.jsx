@@ -16,6 +16,9 @@ const MainLayout = () => {
   const ContentWrapper = styled.div`
     flex-grow: 1;
     min-height: 100vh;
+    // display:flex;
+    // justify-content:center;
+    // max-width:80%;
   `;
 
   return (

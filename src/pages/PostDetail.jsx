@@ -11,7 +11,7 @@ import {
 import React, { useState } from "react";
 import { CustomHeading } from "../App";
 import { colors } from "../theme/colors";
-import ProfilePic from "../assets/myProfile.png";
+import ProfilePic from "../assets/myProfile.jpg";
 import AI from "../assets/ai.jpg";
 import { customIcons } from "../theme/icons";
 import styled from "styled-components";
@@ -29,7 +29,7 @@ const PostDetail = () => {
   const [follow, setFollow] = useState(false);
   return (
     <>
-      <Flex justifyContent={"center"} alignItems={"center"} lineHeight={6}>
+      <Flex justifyContent={"center"} alignItems={"center"} lineHeight={6} color={colors.text.primary}>
         <Box w={{ base: "0%", md: "20%" }}></Box>
         <Box w={{ base: "100%", md: "70%" }}>
           <Heading
@@ -63,7 +63,7 @@ const PostDetail = () => {
                   Follow
                 </Text>
               </Flex>
-              <Text mt={1} color="gray.600">
+              <Text mt={1}>
                 Published in <span>Better Humans</span>
               </Text>
             </Box>
@@ -90,7 +90,7 @@ const PostDetail = () => {
                     like === true ? (
                       <customIcons.MdOutlineFavorite style={{ color: "red" }} />
                     ) : (
-                      <customIcons.MdFavoriteBorder />
+                      <customIcons.MdFavoriteBorder style={{color:'white'}} />
                     )
                   }
                 />
@@ -107,7 +107,7 @@ const PostDetail = () => {
                   background={"transparent"}
                   fontSize={25}
                   border={"none"}
-                  icon={<customIcons.FaCommentDots />}
+                  icon={<customIcons.FaCommentDots style={{color:'white'}} />}
                 />
                 <span>76</span>
                 <CustomDrawer
@@ -130,9 +130,9 @@ const PostDetail = () => {
                   onClick={() => setBookMark(!bookmark)}
                   icon={
                     bookmark === true ? (
-                      <customIcons.BiSolidBookmark />
+                      <customIcons.BiSolidBookmark style={{color:'white'}} />
                     ) : (
-                      <customIcons.BiBookmark />
+                      <customIcons.BiBookmark style={{color:'white'}} />
                     )
                   }
                 />
@@ -150,7 +150,7 @@ const PostDetail = () => {
                     follow === true ? (
                       <customIcons.SlUserFollowing style={{ color: "green" }} />
                     ) : (
-                      <customIcons.SlUserFollow />
+                      <customIcons.SlUserFollow style={{color:'white'}} />
                     )
                   }
                 />

@@ -16,7 +16,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import styled from "styled-components";
-import ProfilePic from "../assets/myProfile.png";
+import ProfilePic from "../assets/myProfile.jpg";
 import SearchBar from "./SearchBar";
 import { NavLink } from "react-router-dom";
 import { customIcons } from "../theme/icons";

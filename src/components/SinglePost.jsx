@@ -12,10 +12,9 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import ProfilePic from "../assets/myProfile.png";
+import ProfilePic from "../assets/myProfile.jpg";
 import { colors } from "../theme/colors";
 import { customIcons } from "../theme/icons";
-import { AuthenticatedRoutesNames } from "../utilities/util.const";
 
 function SinglePost() {
   const [like, setLike] = useState(false);
@@ -23,145 +22,120 @@ function SinglePost() {
   const [follow, setFollow] = useState(false);
 
   return (
-    <>
-    <Link _hover={{ textDecoration: "none" }}
-    //  to={AuthenticatedRoutesNames?.PostDetail}
-     >
-      <Card
-        direction={{ base: "column", sm: "row" }}
-        overflow="hidden"
-        // variant="outline"
-        bg={colors.bg.primary}
-      >
-        <Image
-          objectFit="cover"
-          maxW={{ base: "100px", sm: "200px" }}
-          src="https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
-          alt="Caffe Latte"
-        />
+    <Card
+      w={"48.5rem"}
+      display="flex"
+      flexDirection={{ base: "column", md: "row" }}
+      alignItems="center"
+      gap="1rem"
+      p="1.5rem"
+      borderRadius="md"
+      bg={colors.bg.primary}
+      transition="all 0.3s ease"
+      // _hover={{ boxShadow: "md", bg: colors.bg.secondary }}
+      color={colors.text.primary}
+    >
+      {/* Post Content */}
+      <Stack flex="1" spacing="0.5rem">
+        <Flex alignItems="center" justifyContent="space-between">
+          <Flex alignItems="center">
+            <Image
+              w="2rem"
+              h="2rem"
+              borderRadius="full"
+              src={ProfilePic}
+              alt="Author"
+            />
+            <Text fontSize="sm" fontWeight="bold" ml="0.5rem">
+              Iman
+            </Text>
+          </Flex>
+        </Flex>
 
-        <Stack>
-          <CardBody color={colors.text.primary}>
-            <Flex>
-              <Box>
-                <Heading size="md">The perfect latte</Heading>
+        <Heading size="md" fontWeight="bold">
+          The Perfect Latte
+        </Heading>
 
-                <Text py="2">
-                  Caffè latte is a coffee beverage of Italian origin made with
-                  espresso and steamed milk.
-                </Text>
-              </Box>
-              <Box flexGrow={1}></Box>
-              <Link _hover={{ textDecoration: "none" }}>
-                <Flex alignItems={"center"}>
-                  <Box
-                    overflow={"hidden"}
-                    background={colors.bg.accent}
-                    justifyContent={"center"}
-                    alignItems={"center"}
-                    borderRadius={50}
-                    w={45}
-                    mr={1}
-                  >
-                    <Image
-                     w={30}
-                      src={ProfilePic} />
-                  </Box>
-                  <Text>Iman</Text>
-                </Flex>
-              </Link>
-            </Flex>
-          </CardBody>
+        <Text fontSize="sm" noOfLines={2}>
+          Caffè latte is a coffee beverage of Italian origin made with espresso
+          and steamed milk.
+        </Text>
 
-          <CardFooter>
-            <Flex
-              alignItems={"center"}
-              // w={900}
-              justifyContent={"space-between"}
-            >
-              <Box>
-                <Link _hover={{ textDecoration: "none" }} mr={4}>
-                  <IconButton
-                    _hover={{
-                      bg: "transparent",
-                    }}
-                    background={"transparent"}
-                    fill={"white"}
-                    fontSize={25}
-                    border={"none"}
-                    onClick={() => setLike(!like)}
-                    icon={
-                      like === true ? (
-                        <customIcons.MdOutlineFavorite
-                          style={{ color: "red" }}
-                        />
-                      ) : (
-                        <customIcons.MdFavoriteBorder style={{ fill: "white" }} />
-                      )
-                    }
-                  />
-                  <span>23</span>
-                </Link>
-                <Link _hover={{ textDecoration: "none" }}>
-                  <IconButton
-                    _hover={{
-                      bg: "transparent",
-                    }}
-                    background={"transparent"}
-                    fontSize={25}
-                    border={"none"}
-                    icon={<customIcons.FaCommentDots style={{ fill: "white" }} />}
-                  />
-                  <span>76</span>
-                </Link>
-              </Box>
-              <Box flex={1}></Box>
-              <Box>
-                <Link _hover={{ textDecoration: "none" }}>
-                  <IconButton
-                    _hover={{
-                      bg: "transparent",
-                    }}
-                    background={"transparent"}
-                    fontSize={25}
-                    border={"none"}
-                    onClick={() => setBookMark(!bookmark)}
-                    icon={
-                      bookmark === true ? (
-                        <customIcons.BiSolidBookmark style={{ fill: "white" }} />
-                      ) : (
-                        <customIcons.BiBookmark style={{ fill: "white" }} />
-                      )
-                    }
-                  />
-                </Link>
-                <Link _hover={{ textDecoration: "none" }}>
-                  <IconButton
-                    _hover={{
-                      bg: "transparent",
-                    }}
-                    background={"transparent"}
-                    fontSize={25}
-                    border={"none"}
-                    onClick={() => setFollow(!follow)}
-                    icon={
-                      follow === true ? (
-                        <customIcons.SlUserFollowing
-                          style={{ color: "green" }}
-                        />
-                      ) : (
-                        <customIcons.SlUserFollow style={{ fill: "white" }} />
-                      )
-                    }
-                  />
-                </Link>
-              </Box>
-            </Flex>
-          </CardFooter>
-        </Stack>
-      </Card>
-      </Link>
-    </>
+        <Flex justifyContent="space-between" alignItems="center" mt="0.5rem">
+          <Box>
+            <IconButton
+              background="transparent"
+              _hover={{ background: "transparent" }}
+              fontSize="1.3rem"
+              border="none"
+              onClick={() => setLike(!like)}
+              icon={
+                like ? (
+                  <customIcons.MdOutlineFavorite style={{ color: "red" }} />
+                ) : (
+                  <customIcons.MdFavoriteBorder style={{ fill: "gray" }} />
+                )
+              }
+            />
+            <Text as="span" fontSize="sm" ml="0.3rem">
+              23
+            </Text>
+            <IconButton
+              ml="1rem"
+              background="transparent"
+              _hover={{ background: "transparent" }}
+              fontSize="1.3rem"
+              border="none"
+              icon={<customIcons.FaCommentDots style={{ fill: "gray" }} />}
+            />
+            <Text as="span" fontSize="sm" ml="0.3rem">
+              76
+            </Text>
+          </Box>
+
+          <Flex>
+            <IconButton
+              background="transparent"
+              _hover={{ background: "transparent" }}
+              fontSize="1.3rem"
+              border="none"
+              onClick={() => setBookMark(!bookmark)}
+              icon={
+                bookmark ? (
+                  <customIcons.BiSolidBookmark style={{ fill: "black" }} />
+                ) : (
+                  <customIcons.BiBookmark style={{ fill: "gray" }} />
+                )
+              }
+            />
+            <IconButton
+              ml="0.5rem"
+              background="transparent"
+              _hover={{ background: "transparent" }}
+              fontSize="1.3rem"
+              border="none"
+              onClick={() => setFollow(!follow)}
+              icon={
+                follow ? (
+                  <customIcons.SlUserFollowing style={{ color: "green" }} />
+                ) : (
+                  <customIcons.SlUserFollow style={{ fill: "gray" }} />
+                )
+              }
+            />
+          </Flex>
+        </Flex>
+      </Stack>
+      {/* Post Image */}
+      <Image
+        src="https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+        alt="Caffe Latte"
+        objectFit="cover"
+        w={{ base: "100%", sm: "10rem", md: "12rem" }}
+        h="8rem"
+        borderRadius="md"
+      />
+    </Card>
   );
 }
 

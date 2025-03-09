@@ -17,7 +17,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import ProfilePic from "../assets/myProfile.png";
+import ProfilePic from "../assets/myProfile.jpg";
 import { colors } from "../theme/colors";
 import { useFirebase } from "../context/Firebase";
 import { AuthenticatedRoutesNames } from "../utilities/util.const";
