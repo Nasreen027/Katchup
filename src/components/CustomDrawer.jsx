@@ -55,10 +55,16 @@ const CustomDrawer = ({ isOpen, onClose, mode, comments = [] }) => {
                 overflow="hidden"
                 backgroundColor={colors.bg.secondary}
                 borderRadius={50}
-                w={45}
+                // w={45}
                 mr={2}
               >
-                <Image w={30} src={ProfilePic} alt="Profile image" />
+                <Image
+                  w="2rem"
+                  h="2rem"
+                  borderRadius="full"
+                  src={ProfilePic}
+                  alt="Profile image"
+                />
               </Box>
               <Text>Iman027</Text>
             </Flex>
@@ -122,7 +128,7 @@ const CustomDrawer = ({ isOpen, onClose, mode, comments = [] }) => {
                   </Box>
                 </Flex>
                 <Flex pt={3} justifyContent={"flex-end"} alignItems={"center"}>
-                  <Flex justifyContent={"center"} alignItems={'center'}>
+                  <Flex justifyContent={"center"} alignItems={"center"}>
                     <Link _hover={{ textDecoration: "none" }} mr={3}>
                       <IconButton
                         mr={"-8px"}

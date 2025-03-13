@@ -117,10 +117,14 @@ function Header() {
             justifyContent={"center"}
             alignItems={"center"}
             borderRadius={50}
-            w={45}
+            // w={45}
             mr={1}
           >
-            <Image w={30} src={ProfilePic} onClick={onOpen} />
+            <Image
+             w="2rem"
+             h="2rem"
+             borderRadius="full"
+            src={ProfilePic} onClick={onOpen} />
             <CustomDrawer isOpen={isOpen} onClose={onClose} mode={'profile'} />
           </Box>
         </Flex>

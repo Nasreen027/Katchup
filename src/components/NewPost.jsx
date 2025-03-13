@@ -8,58 +8,57 @@ function NewPost() {
   const [story, setStory] = useState("");
   return (
     <>
-      <Flex mb={5} alignItems={"center"} flexWrap={"wrap"}>
+      <Flex
+       mb={"1.313rem"} alignItems={"center"} flexWrap={"wrap"}>
         <Icon
+          display={{ base: "none", md: "block" }}
           color={colors.bg.primary}
           mr={1}
           fontSize={45}
           as={customIcons.newPostCreate}
         />
-        <Box width={"70%"}>
+        <Box width={{base:"100%",md:"70%"}}>
           <Textarea
             onChange={(e) => setTitle(e.target.value)}
             fontFamily={"serif"}
             color={colors.bg.primary}
             // defaultValue={"Title"}
             placeholder="Title"
-            fontSize={54}
+            fontSize={{ base: "1.375rem", md: "3.375rem" }}
             overflow="hidden"
             whiteSpace="normal"
             width="100%"
-            height="200px"
+            height={{ base: "100px", md: "200px" }}
             resize="none"
           />
           {title}
         </Box>
       </Flex>
-      <Flex mb={5} alignItems={"center"} flexWrap={"wrap"}>
+      <Flex mb={"1.313rem"} alignItems={"center"} flexWrap={"wrap"}>
         <Icon
+          display={{ base: "none", md: "block" }}
           color={colors.bg.primary}
           mr={1}
           fontSize={45}
           as={customIcons.newPostCreate}
         />
-        <Box 
-        width={"70%"}
-        >
+        <Box  width={{base:"100%",md:"70%"}}>
           <Textarea
             onChange={(e) => setStory(e.target.value)}
             fontFamily={"serif"}
             color={colors.bg.primary}
             // defaultValue={"Tell your story..."}
             placeholder="Tell your story..."
-            fontSize={30}
+            fontSize={{ base: "1.375rem", md: "3.375rem" }}
             overflow="hidden"
             whiteSpace="normal"
             width="100%"
-            height="200px"
+            height={{ base: "100px", md: "200px" }}
             resize="none"
           />
         </Box>
       </Flex>
-      <Flex 
-      w={"73%"}
-       justifyContent={"flex-end"}>
+      <Flex w={{base:"100%",md:"73%"}} justifyContent={"flex-end"}>
         <Button
           borderRadius={50}
           backgroundColor={colors.bg.accent}
