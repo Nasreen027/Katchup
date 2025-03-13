@@ -24,6 +24,7 @@ import { AuthenticatedRoutesNames } from "../utilities/util.const";
 import { colors } from "../theme/colors";
 import CustomDrawer from "./CustomDrawer";
 import { CustomLogo } from "../App";
+import { CollapsibleBasic } from "./Collapsible";
 
 function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -40,6 +41,7 @@ function Header() {
           <Box display={{ base: "none", md: "block" }}>
             <SearchBar />
           </Box>
+          <CollapsibleBasic display={{base:"block",md:'none'}} />
         </Flex>
         <Flex
           color={colors.text.primary}
@@ -85,7 +87,6 @@ function Header() {
                   </Box>
                 }
               />
-
               <MenuList backgroundColor={colors.bg.primary} minWidth="300px" p={2} boxShadow="xl" borderRadius="md">
                 <Text fontWeight="bold" mb={2}>
                   Notifications
