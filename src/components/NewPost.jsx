@@ -28,7 +28,7 @@ function NewPost() {
             overflow="hidden"
             whiteSpace="normal"
             width="100%"
-            height={{ base: "100px", md: "200px" }}
+            height={{ base: "6.25rem", md: "12.5rem" }}
             resize="none"
           />
           {title}
@@ -53,7 +53,7 @@ function NewPost() {
             overflow="hidden"
             whiteSpace="normal"
             width="100%"
-            height={{ base: "100px", md: "200px" }}
+            height={"12.5rem"}
             resize="none"
           />
         </Box>

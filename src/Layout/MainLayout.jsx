@@ -1,11 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Box } from "@chakra-ui/react";
+import { Box, useMediaQuery } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styled from "styled-components";
+import CustomTabs from "../components/Tabs";
 
 const MainLayout = () => {
+  const [isLargerThanMd] = useMediaQuery("(min-width: 48em)");
+
   // const CustomContainer = styled.div`
   //   width: 80%;
   //   margin: 0 auto;
@@ -32,7 +35,8 @@ const MainLayout = () => {
           <Outlet />
         </ContentWrapper>
       </Box>
-      <Footer />
+      {/* {!isLargerThanMd && <CustomTabs/> } */}
+      {isLargerThanMd && <Footer /> }
     </>
   );
 };

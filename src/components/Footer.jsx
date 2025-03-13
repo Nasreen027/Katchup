@@ -1,5 +1,6 @@
 import { Box, Text } from '@chakra-ui/react';
 import React from 'react';
+import { colors } from '../theme/colors';
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
       py={4}
       // bg="#fff"
     >
-      <Text textAlign="center" color="black">
+      <Text textAlign="center" color={colors?.text?.primary}>
         © All Rights Reserved | Aurora | Developed by Nasreen.
       </Text>
     </Box>

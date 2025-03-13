@@ -42,12 +42,12 @@ function Header() {
           </Box>
         </Flex>
         <Flex
-        color={colors.text.primary}
+          color={colors.text.primary}
           display={{ base: "none", md: "flex" }}
           justifyContent={"space-between"} alignItems={"center"} w={190}>
           <NavLink to={AuthenticatedRoutesNames.NewPost}>
             <Flex>
-              <Icon fontSize={25} mr={1} as={customIcons.write}  />
+              <Icon fontSize={25} mr={1} as={customIcons.write} />
               <Text>Write</Text>
             </Flex>
           </NavLink>
@@ -61,7 +61,7 @@ function Header() {
           <Box position="relative">
             <Menu>
               <MenuButton
-              color={colors.text.primary}
+                color={colors.text.primary}
                 _hover={{ background: "transparent" }}
                 as={IconButton}
                 background="transparent"
@@ -75,7 +75,7 @@ function Header() {
                       colorScheme="red"
                       borderRadius="50%"
                       position="absolute"
-                      top="-7px"  
+                      top="-7px"
                       right="-7px"
                       fontSize="0.8rem"
                       zIndex={1}
@@ -121,13 +121,57 @@ function Header() {
             mr={1}
           >
             <Image
-             w="2rem"
-             h="2rem"
-             borderRadius="full"
-            src={ProfilePic} onClick={onOpen} />
+              w="2rem"
+              h="2rem"
+              borderRadius="full"
+              src={ProfilePic} onClick={onOpen} />
             <CustomDrawer isOpen={isOpen} onClose={onClose} mode={'profile'} />
           </Box>
         </Flex>
+      </Flex>
+
+      {/* Bottom Mobile Header */}
+      <Flex
+        position="fixed"
+        bottom="0"
+        left="0"
+        right="0"
+        bg={colors.bg.primary}
+        color={colors.text.primary}
+        boxShadow="0 -2px 5px rgba(0, 0, 0, 0.2)"
+        display={{ base: "flex", md: "none" }} // Show on mobile only
+        justifyContent="space-around"
+        alignItems="center"
+        paddingY={2}
+        zIndex={10}
+      >
+        <NavLink to={AuthenticatedRoutesNames.NewPost}>
+          <Flex>
+            <Icon fontSize={25} mr={1} as={customIcons.write} />
+            <Text>Write</Text>
+          </Flex>
+        </NavLink>
+        <NavLink to={AuthenticatedRoutesNames.NewPost}>
+          <Flex>
+            <Icon fontSize={25} mr={1} as={customIcons.bell} />
+          </Flex>
+        </NavLink>
+        <Box
+          cursor={"pointer"}
+          overflow={"hidden"}
+          background={colors.bg.accent}
+          justifyContent={"center"}
+          alignItems={"center"}
+          borderRadius={50}
+          mr={1}
+        >
+          <Image
+            w="2rem"
+            h="2rem"
+            borderRadius="full"
+            src={ProfilePic} onClick={onOpen} />
+          <CustomDrawer isOpen={isOpen} onClose={onClose} mode={'profile'} />
+        </Box>
       </Flex>
     </>
   );

@@ -24,7 +24,7 @@ function SinglePost() {
   return (
     <Card
       w={"48.5rem"}
-      h={"15rem"}
+      h={{base:"23rem",md:"15rem"}}
       p="1.5rem"
       borderRadius="md"
       bg={colors.bg.primary}
