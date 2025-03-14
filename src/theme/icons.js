@@ -6,6 +6,7 @@ import { MdOutlineFavorite, MdFavoriteBorder } from "react-icons/md";
 import { BiBookmark, BiSolidBookmark } from "react-icons/bi";
 import { SlUserFollow, SlUserFollowing } from "react-icons/sl";
 import { VscThreeBars } from "react-icons/vsc";
+import { IoHomeOutline } from "react-icons/io5";
 
 export const customIcons = {
   envelope: FaEnvelope,
@@ -23,4 +24,5 @@ export const customIcons = {
   SlUserFollowing:SlUserFollowing,
   google:FaGoogle,
   threeBars:VscThreeBars,
+  home:IoHomeOutline,
 };
