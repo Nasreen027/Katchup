@@ -8,7 +8,7 @@ import { colors } from "./theme/colors";
 
 export const CustomHeading = styled.h1`
   font-family: cursive;
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: bold;
   color:${colors.text.primary};
 `;
@@ -17,12 +17,12 @@ const AppContainer = styled.div`
   background-color:black;
 `;
 export const CustomLogo = styled.div`
-  font-size: 34px;
+  font-size: 2rem;
   font-weight: bold;
   text-decoration: none;
   display: inline-block;
   font-family: cursive;
-  margin-right: 33px;
+  margin-right: 2.063rem;
   background: ${colors.bg.accent};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

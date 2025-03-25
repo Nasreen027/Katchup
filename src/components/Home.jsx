@@ -11,7 +11,7 @@ function Home() {
         <Heading
         color={colors.text.primary}
         //  p={3}
-          borderBottom={"2px solid #1E1E1E"} mt={'3.375rem'} mb={8} as={"h1"}>
+          borderBottom={"2px solid #1E1E1E"} mb={8} as={"h1"}>
           Posts
           </Heading>
           <Flex justifyContent={'center'}>

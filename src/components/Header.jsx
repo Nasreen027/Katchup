@@ -28,34 +28,41 @@ import { CollapsibleBasic } from "./Collapsible";
 
 function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen: isSearchBarOpen, onToggle } = useDisclosure();
+  console.log(isSearchBarOpen, 'isSearchBarOpenheader');
   return (
     <>
-      <Flex
-        // position={"relative"}
-        // style={{ top: 7 }}
-        // boxShadow={"0 5px 5px #1E1E1E"}
-        p={3}
-        position="fixed"
-        // bottom="0"
-        left="0"
-        right="0"
-        bg={colors.bg.primary}
-        color={colors.text.primary}
-        boxShadow="0 -2px 5px rgba(0, 0, 0, 0.2)"
-        justifyContent="space-around"
-        alignItems="center"
-        paddingY={2}
-        zIndex={1000}
-      >
-        <Flex flexGrow={1} justifyContent={{ base: "center", md: "flex-start" }} >
-          <CustomLogo>Aurora</CustomLogo>
-          <Box display={{ base: "none", md: "block" }}>
-            <SearchBar />
-          </Box>
-          <Box display={{base:"block",md:'none'}} >
-          <CollapsibleBasic />
-          </Box>
-        </Flex>
+     <Flex
+      p={3}
+      position="fixed"
+      top={0}
+      left={0}
+      right={0}
+      bg={colors.bg.primary}
+      color={colors.text.primary}
+      boxShadow="0 -2px 5px rgba(0, 0, 0, 0.2)"
+      justifyContent="space-around"
+      alignItems="center"
+      paddingY={2}
+      zIndex={1000}
+    >
+      <Flex flexGrow={1} justifyContent={{ base: "center", md: "flex-start" }}>
+        <CustomLogo>Aurora</CustomLogo>
+        <Box display={{ base: "none", md: "block" }}>
+          <SearchBar />
+        </Box>
+        <Box display={{ base: "block", md: "none" }}>
+          <Icon
+            mt={4}
+            onClick={onToggle}
+            fontSize={25}
+            as={customIcons.search}
+          />
+        </Box>
+      </Flex>
+  
+    <CollapsibleBasic isSearchBarOpen={isSearchBarOpen} />
+    
         <Flex
           color={colors.text.primary}
           display={{ base: "none", md: "flex" }}
@@ -171,7 +178,7 @@ function Header() {
             {/* <Text>Write</Text> */}
           </Flex>
         </NavLink>
-        <NavLink to={AuthenticatedRoutesNames.NewPost}>
+        <NavLink to={AuthenticatedRoutesNames.Notifications}>
           <Flex>
             <Icon fontSize={25} mr={1} as={customIcons.bell} />
           </Flex>

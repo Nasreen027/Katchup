@@ -6,10 +6,12 @@ function SearchBar() {
   return (
 <>
 <InputGroup
-            height={10}
+            height="2.5rem"
             width={300}
             backgroundColor={colors.bg.primary}
             borderRadius={50}
+            // border={"1px solid white"}
+            border={"2px solid #C0C0C0"}
           >
             <Input
               fontSize={15}
@@ -24,6 +26,7 @@ function SearchBar() {
               <IconButton
                 border={"none"}
                 backgroundColor={"transparent"}
+                display={{base:'none',md:'block'}}
                 icon={<customIcons.search style={{fill:"white"}} fontSize={"25px"} />}
                 mt={15}
               />

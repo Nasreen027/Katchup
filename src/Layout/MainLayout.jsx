@@ -22,6 +22,8 @@ const MainLayout = () => {
     // display:flex;
     // justify-content:center;
     // max-width:80%;
+    position:relative;
+    top:3.425rem;
   `;
 
   return (

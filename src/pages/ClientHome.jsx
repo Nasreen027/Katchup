@@ -14,7 +14,7 @@ const ClientHome = () => {
       justifyContent={"center"}
       height={{ base: "auto", md: "50vh" }}
       p={{ base: 4, md: 8 }}
-      mt={{ base: "20px", md: "50px", lg: "80px" }}
+      mt={{ base: "1.25rem", md: "3.125rem", lg: "5rem" }}
       // ml={{ base: "20px", md: "120px" }}
       color={colors.text.primary}
     >

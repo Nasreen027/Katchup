@@ -9,6 +9,7 @@ import About from "../pages/About";
 import Profile from "../pages/Profile";
 import Settings from "../pages/Settings";
 import PostDetail from "../pages/PostDetail";
+import Notifications from "../pages/Notifications";
 
 const AuthenticatedRoutes = () => {
   return (
@@ -20,6 +21,8 @@ const AuthenticatedRoutes = () => {
         <Route path={UnAuthenticatedRoutesNames.About} element={<About />} />
         <Route path={AuthenticatedRoutesNames?.MyProfile} element={<Profile />} />
         <Route path={AuthenticatedRoutesNames?.Setting} element={<Settings />} />
+        <Route path={AuthenticatedRoutesNames?.Notifications} element={<Notifications />} />
+
         {/* <Route path={"*"} element={<NotFound />} /> */}
       </Route>
     </Routes>
