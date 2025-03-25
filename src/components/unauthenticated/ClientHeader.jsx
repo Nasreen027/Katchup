@@ -18,7 +18,7 @@ function ClientHeader() {
         fontSize={18}
       >
         <Flex flexGrow={1}>
-          <CustomLogo>Aurora</CustomLogo>
+          <CustomLogo>Katchup</CustomLogo>
         </Flex>
         <Flex justifyContent={"space-between"} alignItems={"center"} w={230}>
           <NavLink to={UnAuthenticatedRoutesNames.About}>About us</NavLink>

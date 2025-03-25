@@ -15,6 +15,7 @@ import React, { useState } from "react";
 import ProfilePic from "../assets/myProfile.jpg";
 import { colors } from "../theme/colors";
 import { customIcons } from "../theme/icons";
+import { AuthenticatedRoutesNames } from "../utilities/util.const";
 
 function SinglePost() {
   const [like, setLike] = useState(false);
@@ -22,6 +23,7 @@ function SinglePost() {
   const [follow, setFollow] = useState(false);
 
   return (
+    <Link href={AuthenticatedRoutesNames?.PostDetail} >
     <Card
       w={"48.5rem"}
       h={{base:"23rem",md:"15rem"}}
@@ -139,6 +141,7 @@ function SinglePost() {
         </Flex>
       </Flex>
     </Card>
+    </Link>
   );
 }
 

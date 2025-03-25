@@ -31,7 +31,7 @@ const MainLayout = () => {
       px={{base:"1rem",md:"2rem"}}
        py={10}
        >
-        <ContentWrapper>
+        <ContentWrapper mt={'3.375rem'}>
           <Outlet />
         </ContentWrapper>
       </Box>

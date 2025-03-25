@@ -48,7 +48,7 @@ function Header() {
         zIndex={1000}
       >
         <Flex flexGrow={1} justifyContent={{ base: "center", md: "flex-start" }} >
-          <CustomLogo>Aurora</CustomLogo>
+          <CustomLogo>Katchup</CustomLogo>
           <Box display={{ base: "none", md: "block" }}>
             <SearchBar />
           </Box>
