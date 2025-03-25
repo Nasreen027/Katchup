@@ -32,37 +32,32 @@ function Header() {
   console.log(isSearchBarOpen, 'isSearchBarOpenheader');
   return (
     <>
-     <Flex
-      p={3}
-      position="fixed"
-      top={0}
-      left={0}
-      right={0}
-      bg={colors.bg.primary}
-      color={colors.text.primary}
-      boxShadow="0 -2px 5px rgba(0, 0, 0, 0.2)"
-      justifyContent="space-around"
-      alignItems="center"
-      paddingY={2}
-      zIndex={1000}
-    >
-      <Flex flexGrow={1} justifyContent={{ base: "center", md: "flex-start" }}>
-        <CustomLogo>Aurora</CustomLogo>
-        <Box display={{ base: "none", md: "block" }}>
-          <SearchBar />
-        </Box>
-        <Box display={{ base: "block", md: "none" }}>
-          <Icon
-            mt={4}
-            onClick={onToggle}
-            fontSize={25}
-            as={customIcons.search}
-          />
-        </Box>
-      </Flex>
-  
-    <CollapsibleBasic isSearchBarOpen={isSearchBarOpen} />
-    
+      <Flex
+        // position={"relative"}
+        // style={{ top: 7 }}
+        // boxShadow={"0 5px 5px #1E1E1E"}
+        p={3}
+        position="fixed"
+        // bottom="0"
+        left="0"
+        right="0"
+        bg={colors.bg.primary}
+        color={colors.text.primary}
+        boxShadow="0 -2px 5px rgba(0, 0, 0, 0.2)"
+        justifyContent="space-around"
+        alignItems="center"
+        paddingY={2}
+        zIndex={1000}
+      >
+        <Flex flexGrow={1} justifyContent={{ base: "center", md: "flex-start" }} >
+          <CustomLogo>Katchup</CustomLogo>
+          <Box display={{ base: "none", md: "block" }}>
+            <SearchBar />
+          </Box>
+          <Box display={{base:"block",md:'none'}} >
+          <CollapsibleBasic />
+          </Box>
+        </Flex>
         <Flex
           color={colors.text.primary}
           display={{ base: "none", md: "flex" }}
