@@ -29,7 +29,6 @@ import { CollapsibleBasic } from "./Collapsible";
 function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isOpen: isSearchBarOpen, onToggle } = useDisclosure();
-  console.log(isSearchBarOpen, 'isSearchBarOpenheader');
   return (
     <>
       <Flex
@@ -49,19 +48,39 @@ function Header() {
         paddingY={2}
         zIndex={1000}
       >
-        <Flex flexGrow={1} justifyContent={{ base: "center", md: "flex-start" }} >
+        <Flex
+          flexGrow={1}
+          justifyContent={{ base: "space-between", md: "flex-start" }}
+        >
           <CustomLogo>Katchup</CustomLogo>
           <Box display={{ base: "none", md: "block" }}>
             <SearchBar />
           </Box>
-          <Box display={{base:"block",md:'none'}} >
-          <CollapsibleBasic />
+          <Box display={{ base: "block", md: "none" }}>
+            <IconButton
+              onClick={onToggle}
+              border={"1px solid white"}
+              textDecoration={"none"}
+              borderRadius={"50%"}
+              backgroundColor={"transparent"}
+              icon={
+                <customIcons.search
+                  style={{ fill: "white" }}
+                  fontSize={"25px"}
+                />
+              }
+              mt={1}
+            />
+            <CollapsibleBasic isSearchBarOpen={isSearchBarOpen} />
           </Box>
         </Flex>
         <Flex
           color={colors.text.primary}
           display={{ base: "none", md: "flex" }}
-          justifyContent={"space-between"} alignItems={"center"} w={190}>
+          justifyContent={"space-between"}
+          alignItems={"center"}
+          w={190}
+        >
           <NavLink to={AuthenticatedRoutesNames.NewPost}>
             <Flex>
               <Icon fontSize={25} mr={1} as={customIcons.write} />
@@ -102,12 +121,21 @@ function Header() {
                   </Box>
                 }
               />
-              <MenuList backgroundColor={colors.bg.primary} minWidth="300px" p={2} boxShadow="xl" borderRadius="md">
+              <MenuList
+                backgroundColor={colors.bg.primary}
+                minWidth="300px"
+                p={2}
+                boxShadow="xl"
+                borderRadius="md"
+              >
                 <Text fontWeight="bold" mb={2}>
                   Notifications
                 </Text>
                 <Divider mb={2} />
-                <MenuItem backgroundColor={colors.bg.primary} _hover={{ backgroundColor: colors.bg.hover }}>
+                <MenuItem
+                  backgroundColor={colors.bg.primary}
+                  _hover={{ backgroundColor: colors.bg.hover }}
+                >
                   <Flex flexDirection="column" align="flex-start">
                     <Text fontWeight="medium">John liked your post</Text>
                     <Text fontSize="sm" color="gray.500">
@@ -140,8 +168,10 @@ function Header() {
               w="2rem"
               h="2rem"
               borderRadius="full"
-              src={ProfilePic} onClick={onOpen} />
-            <CustomDrawer isOpen={isOpen} onClose={onClose} mode={'profile'} />
+              src={ProfilePic}
+              onClick={onOpen}
+            />
+            <CustomDrawer isOpen={isOpen} onClose={onClose} mode={"profile"} />
           </Box>
         </Flex>
       </Flex>
@@ -161,7 +191,7 @@ function Header() {
         paddingY={2}
         zIndex={1000}
       >
-         <NavLink to={AuthenticatedRoutesNames.Home}>
+        <NavLink to={AuthenticatedRoutesNames.Home}>
           <Flex>
             <Icon fontSize={25} mr={1} as={customIcons.home} />
             {/* <Text>Write</Text> */}
@@ -191,8 +221,10 @@ function Header() {
             w="2rem"
             h="2rem"
             borderRadius="full"
-            src={ProfilePic} onClick={onOpen} />
-          <CustomDrawer isOpen={isOpen} onClose={onClose} mode={'profile'} />
+            src={ProfilePic}
+            onClick={onOpen}
+          />
+          <CustomDrawer isOpen={isOpen} onClose={onClose} mode={"profile"} />
         </Box>
       </Flex>
     </>

@@ -6,7 +6,7 @@ function SearchBar() {
   return (
 <>
 <InputGroup
-            height="2.5rem"
+            height="2.68rem"
             width={300}
             backgroundColor={colors.bg.primary}
             borderRadius={50}
@@ -28,7 +28,7 @@ function SearchBar() {
                 backgroundColor={"transparent"}
                 display={{base:'none',md:'block'}}
                 icon={<customIcons.search style={{fill:"white"}} fontSize={"25px"} />}
-                mt={15}
+                mt={11}
               />
             </InputRightElement>
           </InputGroup>

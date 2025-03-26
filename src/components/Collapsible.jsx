@@ -17,22 +17,28 @@
 import { Box, Collapse, Flex } from "@chakra-ui/react";
 import SearchBar from "./SearchBar";
 import { colors } from "../theme/colors";
+import { useEffect } from "react";
 
 export const CollapsibleBasic = ({ isSearchBarOpen }) => {
+  useEffect(()=>{
+    console.log("working");
+  })
   return (
     <Box
-      position="fixed"
-      top="50px" /* Adjust this to match your navbar height */
+      position="absolute"
+      top="100%"
       left={0}
       right={0}
       bg={colors?.bg?.primary}
       zIndex={999}
+      boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)"
     >
       <Collapse in={isSearchBarOpen} animateOpacity>
-        <Flex justifyContent="center" p={2}>
+        <Flex justifyContent="center" p={3}>
           <SearchBar />
         </Flex>
       </Collapse>
     </Box>
   );
 };
+
