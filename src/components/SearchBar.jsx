@@ -6,6 +6,8 @@ function SearchBar() {
   return (
 <>
 <InputGroup
+display={'flex'}
+justifyContent={'space-between'}
             height="2.68rem"
             width={300}
             backgroundColor={colors.bg.primary}
@@ -15,7 +17,7 @@ function SearchBar() {
           >
             <Input
               fontSize={15}
-              pr="4.5rem"
+              // pr="4.5rem"
               placeholder="Search"
               borderRadius={50}
               border={"none"}
@@ -28,7 +30,7 @@ function SearchBar() {
                 backgroundColor={"transparent"}
                 display={{base:'none',md:'block'}}
                 icon={<customIcons.search style={{fill:"white"}} fontSize={"25px"} />}
-                mt={11}
+                mt={15}
               />
             </InputRightElement>
           </InputGroup>
