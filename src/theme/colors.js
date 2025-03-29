@@ -31,8 +31,7 @@ export const colors = {
   bg: {
     primary: "#1E1E1E",
     secondary: "#A36A00", // Warm brownish gold
-    // accent: "linear-gradient(45deg, #FF9A8B, #FF6A88, #FF99AC)", // Soft warm gradient
-        accent: "linear-gradient(45deg, #FCAF45, #FF543E, #D6249F, #285AEB)",
+    accent: "linear-gradient(45deg, #FCAF45, #FF543E, #D6249F, #285AEB)",
     icon: "#FFFFFF", // White
     hover: "#4A4A4A",
   },
@@ -45,4 +44,8 @@ export const colors = {
     text: "#1E1E1E", // Dark gray for contrast
     bg: "linear-gradient(45deg, #FF9A8B, #FF6A88, #FF99AC)", // Matching accent gradient
   },
+  hover:{
+    text: "#B37820", // Dark gray for contrast
+    bg: "linear-gradient(45deg, #FF9A8B, #FF6A88, #FF99AC)", // Matching accent gradient
+  }
 };

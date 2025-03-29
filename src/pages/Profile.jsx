@@ -21,7 +21,7 @@ const ProfilePage = () => {
           <Avatar
             size="2xl"
             boxSize={'13.125rem'}
-            name="John Doe"
+            name="Iman"
             src="https://via.placeholder.com/150"
           />
         </Box>

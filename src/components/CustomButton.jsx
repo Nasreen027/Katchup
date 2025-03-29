@@ -9,7 +9,7 @@ function CustomButton({title}) {
           borderRadius={50}
           backgroundColor={colors.bg.accent}
           color={colors.text.secondary}
-          _hover={{ bg: "rgba(102, 0, 51, 0.75)" }}
+          _hover={colors.hover.text}
         >
           {title}
         </Button>
