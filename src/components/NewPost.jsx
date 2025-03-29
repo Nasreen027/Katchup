@@ -2,6 +2,7 @@ import { Box, Button, Flex, Icon, Textarea } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { customIcons } from "../theme/icons";
 import { colors } from "../theme/colors";
+import CustomButton from "./CustomButton";
 
 function NewPost() {
   const [title, setTitle] = useState("");
@@ -9,7 +10,7 @@ function NewPost() {
   return (
     <>
       <Flex
-       mb={"1.313rem"} alignItems={"center"} flexWrap={"wrap"}>
+        mb={"1.313rem"} alignItems={"center"} flexWrap={"wrap"}>
         <Icon
           display={{ base: "none", md: "block" }}
           color={colors.bg.primary}
@@ -17,7 +18,7 @@ function NewPost() {
           fontSize={45}
           as={customIcons.newPostCreate}
         />
-        <Box width={{base:"100%",md:"70%"}}>
+        <Box width={{ base: "100%", md: "70%" }}>
           <Textarea
             onChange={(e) => setTitle(e.target.value)}
             fontFamily={"serif"}
@@ -42,7 +43,7 @@ function NewPost() {
           fontSize={45}
           as={customIcons.newPostCreate}
         />
-        <Box  width={{base:"100%",md:"70%"}}>
+        <Box width={{ base: "100%", md: "70%" }}>
           <Textarea
             onChange={(e) => setStory(e.target.value)}
             fontFamily={"serif"}
@@ -58,15 +59,8 @@ function NewPost() {
           />
         </Box>
       </Flex>
-      <Flex w={{base:"100%",md:"73%"}} justifyContent={"flex-end"}>
-        <Button
-          borderRadius={50}
-          backgroundColor={colors.bg.accent}
-          color={colors.text.secondary}
-          _hover={{ bg: "rgba(102, 0, 51, 0.75)" }}
-        >
-          Publish
-        </Button>
+      <Flex w={{ base: "100%", md: "73%" }} justifyContent={"flex-end"}>
+        <CustomButton title={'Publish'} />
       </Flex>
     </>
   );
