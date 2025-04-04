@@ -20,7 +20,7 @@ const ProfilePage = () => {
         <Box textAlign={'center'}>
           <Avatar
             size="2xl"
-            boxSize={'13.125rem'}
+            boxSize={{ base: '7rem', sm: '10rem', md: '13.125rem'}}
             name="Iman"
             src="https://via.placeholder.com/150"
           />
